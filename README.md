@@ -1,4 +1,4 @@
-# vanilla_zeta
+# vanilla_zeta()
 JavaScript Method for Evaluating the Riemann Zeta Function.
 Handling Complex and Negative Real Numbers.
 It's a plug-and-play component!
