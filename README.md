@@ -1,6 +1,7 @@
 # vanilla_zeta()
-JavaScript Method for Evaluating the Riemann Zeta Function: Handling Complex and Negative Real Numbers.
+Riemann Zeta Function Across the Full Complex Plane.
 
-The special feature of this code is that it operates without any imports or libraries, embodying an inertial function with just a few lines of code. It's a plug-and-play component!
+Single Function with Robust Calculation Methods and a User-Friendly Interface.
+Read the Tags – This Is No Joke!
 
 For detailed usage guide, please visit: WWW.ZETA-CALCULATOR.COM ...a small test method is included after the primary function for immediate testing.
