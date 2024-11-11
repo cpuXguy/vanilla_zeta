@@ -1,11 +1,29 @@
 # vanilla_zeta()
-Riemann Zeta Function Across the Full Complex Plane.
+Riemann Zeta Function Across the FULL COMPLEX PLANE.
 
-The vanilla_zeta() function calculates the Riemann Zeta function for any complex input and features a user-friendly interface.
-It is a single function with intelligent calculation methods, meaning there’s no need to worry about selecting calculation methods – the function automatically determines the best approach to ensure accurate results.
+// Define real and imaginary parts for the input.
+// IMPORTANT: The values Re=0.5 and Im=14.134725141734693*i correspond to the first non-trivial zero of the Riemann Zeta function, meaning the result should be approximately = 0 + 0i.
+const Re = 0.5; // Real part (on the critical line)
+const Im = 14.134725141734693; // Imaginary part that yields the first non-trivial zero.
 
-It’s serverless, built in pure vanilla JavaScript, plug-and-play, and requires no additional libraries – saving you all the extra work!
+// Define the calculation investment.
+const calculationInvestment = 0.67; // 0 (minimum) <= value <= 1 (maximum)
 
-Isn’t this exactly what you’ve been looking for? I worked hard to generate that!
+// Define whether result verification is enabled or not.
+// IMPORTANT: For the feature result verification, please visit WWW.ZETA-CALCULATOR.COM
+const resultVerification = false; // Set 'false' to disable result verification and save calculation time.
 
-For detailed usage guide, please visit: WWW.ZETA-CALCULATOR.COM ...a small test method is included after the primary function for immediate testing.
+// Call the vanilla_zeta function with the complex input and additional parameters
+// RUN * * * * * *
+const output_array = vanilla_zeta(Re, Im, calculationInvestment, resultVerification);
+// * * * * * * * *
+
+// Extract the real and imaginary parts from the result array
+// For a more detailed explanation of the output_array, please refer to the 'TEST_vanilla_zeta()' function in the 'ZETA_functionCode.js' file.
+const result_Re = output_array[0];
+const result_Im = output_array[1];
+
+// Log the real and imaginary parts in a single console.log statement with the corrected label
+console.log(`zeta-result(${Re} + ${Im}i) = ${output_array[0]} + ${output_array[1]}i`);
+
+// For detailed usage guide, please visit: WWW.ZETA-CALCULATOR.COM ...a small test method is included after the primary function for immediate testing.
