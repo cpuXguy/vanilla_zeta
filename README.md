@@ -36,7 +36,7 @@ var output_array = vanilla_zeta(input_Real, input_Imag, input_Effort, input_Trus
 Output Descriptions:
 
 Interpreting the vanilla_zeta Output 'output_array' / Step 3: Read Output.
-output_array[0] - result of Zeta
+output_array[0] - Real result of Zeta
 output_array[1] - Imaginary result of Zeta
 output_array[2] - Polar radius result of Zeta
 output_array[3] - Polar angle result of Zeta in radians
