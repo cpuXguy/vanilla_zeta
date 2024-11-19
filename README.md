@@ -2,7 +2,7 @@
 Riemann Zeta Function Across the FULL COMPLEX PLANE.
 Try it out immediately on: WWW.ZETA-CALCULATOR.COM
 
-* How to use the vanilla_zeta() Function - Guide *
+How to use the vanilla_zeta() Function - Guide:
 
 Note: I take no responsibility for the correctness of the results! As one should know, zeta value calculations and their verification are a complex task. Therefore, any output results are merely a value recommendation from 'vanilla_zeta()', and they may differ significantly from the actual results!
 
