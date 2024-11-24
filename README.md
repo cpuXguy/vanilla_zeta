@@ -54,7 +54,7 @@ If there were issues during the calculation, output[5] is false, and output[0] w
 
 Output[6]:
 This is self-explanatory. Be aware that only a few calculations may not reflect real-time performance. If only a few calculations are performed, your computer may remain in standby mode, causing the time to be much higher. Perform many calculations to get the time of a fully active CPU!
-Additionally, the times can vary significantly depending on the region (real-imaginary position)!"
+Additionally, the times can vary significantly depending on the region (real-imaginary position)!
 
 Remaining output[4] - Result Verification / Trust:
 Possible results are '-1' if disabled, '0' (zero), or a value greater than '0' up to '0.999999999999999'.
