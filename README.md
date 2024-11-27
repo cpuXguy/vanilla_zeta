@@ -12,19 +12,19 @@ Note: I take no responsibility for the correctness of the results! As one should
 
 The complex part of the Riemann Zeta function is defined by its real and imaginary part.
 Real part:      -Number.MAX_VALUE <= input_Real <= Number.MAX_VALUE
-var input_Real = 0.5;
+**var input_Real = 0.5;**
 Imaginary part: -Number.MAX_VALUE <= input_Imag <= Number.MAX_VALUE
-var input_Imag = 14.134725141734693;
+**var input_Imag = 14.134725141734693;**
 
 You must choose the amount of computational effort you want to invest, where 0 represents minimal effort and 1 represents maximum effort.
 Naturally, this will affect the calculation time.
 Effort level:   0 <= input_Effort <= 1
-var input_Effort = 0.67;
+**var input_Effort = 0.67;**
 
 The input for a special feature called 'Trust'.
 If the feature is enabled, vanilla_zeta() performs a test that verifies whether the calculation has converged, which is essential for ensuring the correctness of the result.
 'Trust' (verify result) enabled: true, false
-var input_TrustEnabled = true;
+**var input_TrustEnabled = true;**
 
 If 'Trust' is disabled (false), the output listed in [4] will always be '-1', indicating that it is not enabled.
 If 'Trust' is enabled, you will get a value from '0' up to '0.999999999999999'. The meaning of this value will be explained shortly below.
@@ -40,13 +40,13 @@ var output_array = vanilla_zeta(input_Real, input_Imag, input_Effort, input_Trus
 
 Output Descriptions:
 
-output_array[0] - Real result of Zeta
-output_array[1] - Imaginary result of Zeta
-output_array[2] - Polar radius result of Zeta
-output_array[3] - Polar angle result of Zeta in radians
-output_array[4] - Trust value of the calculation
-output_array[5] - Boolean indicating if the calculation was successful
-output_array[6] - Process time of 'vanilla_zeta()' in milliseconds
+**output_array[0]** - Real result of Zeta
+**output_array[1]** - Imaginary result of Zeta
+**output_array[2]** - Polar radius result of Zeta
+**output_array[3]** - Polar angle result of Zeta in radians
+**output_array[4]** - Trust value of the calculation
+**output_array[5]** - Boolean indicating if the calculation was successful
+**output_array[6]** - Process time of 'vanilla_zeta()' in milliseconds
 
 Outputs [0] to [3]:
 The interpretation is self-explanatory.
