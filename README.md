@@ -4,9 +4,9 @@ Try it out immediately on: WWW.ZETA-CALCULATOR.COM<br>
 
 **How to use the vanilla_zeta() function - Guide:**<br>
 
-***<br>
-Note: I take no responsibility for the correctness of the results! As one should understand, calculating zeta values and verifying them is a challenging task. Therefore, any output from vanilla_zeta() should be considered as a value recommendation, and it may differ significantly from the actual results.<br>
-***<br>
+***
+Note: I take no responsibility for the correctness of the results! As one should understand, calculating zeta values and verifying them is a challenging task. Therefore, any output from vanilla_zeta() should be considered as a value recommendation, and it may differ significantly from the actual results.
+***
 
 **Execute the vanilla_zeta function / Step 1: Declare Inputs.**<br>
 
@@ -32,9 +32,9 @@ Be aware that the result verification 'Trust' requires a lot of computational po
 
 **Execute the vanilla_zeta function / Step 2: Execute.**<br>
 
-***    ***    ***<br>
-var output_array = vanilla_zeta(input_Real, input_Imag, input_Effort, input_TrustEnabled);<br>
-***    ***    ***<br>
+***
+var output_array = vanilla_zeta(input_Real, input_Imag, input_Effort, input_TrustEnabled);
+***
 
 **Interpreting the vanilla_zeta Output 'output_array' / Step 3: Read Output.**<br>
 
