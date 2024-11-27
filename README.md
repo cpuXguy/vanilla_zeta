@@ -33,7 +33,7 @@ Be aware that the result verification 'Trust' requires a lot of computational po
 **Execute the vanilla_zeta function / Step 2: Execute.**<br>
 
 ***
-var output_array = vanilla_zeta(input_Real, input_Imag, input_Effort, input_TrustEnabled);
+**var output_array = vanilla_zeta(input_Real, input_Imag, input_Effort, input_TrustEnabled);**
 ***
 
 **Interpreting the vanilla_zeta Output 'output_array' / Step 3: Read Output.**<br>
