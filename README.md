@@ -40,13 +40,13 @@ var output_array = vanilla_zeta(input_Real, input_Imag, input_Effort, input_Trus
 
 Output Descriptions:
 
-**output_array[0]** - Real result of Zeta
-**output_array[1]** - Imaginary result of Zeta
-**output_array[2]** - Polar radius result of Zeta
-**output_array[3]** - Polar angle result of Zeta in radians
-**output_array[4]** - Trust value of the calculation
-**output_array[5]** - Boolean indicating if the calculation was successful
-**output_array[6]** - Process time of 'vanilla_zeta()' in milliseconds
+**output_array[0]** - Real result of Zeta<br>
+**output_array[1]** - Imaginary result of Zeta<br>
+**output_array[2]** - Polar radius result of Zeta<br>
+**output_array[3]** - Polar angle result of Zeta in radians<br>
+**output_array[4]** - Trust value of the calculation<br>
+**output_array[5]** - Boolean indicating if the calculation was successful<br>
+**output_array[6]** - Process time of 'vanilla_zeta()' in milliseconds<br>
 
 Outputs [0] to [3]:
 The interpretation is self-explanatory.
