@@ -68,7 +68,4 @@ Now if the value is greater than '0' and at most '0.999999999999999', convergenc
 The exact interpretation of the value is simple - the closer it approaches '1', the better the convergence, which often indicates more accurate results.<br>
 
 ATTENTION to Output[4] - Result Verification / Trust:<br>
-This feature provides good assistance in getting a feel for the quality of the results - however, the statement about the correctness of the results may be incorrect! To gain additional confidence, it makes sense to use other algorithms for deriving the zeta values and make comparisons.<br>
-
-ATTENTION to Output[4] - Result Verification / Trust:<br>
 This feature provides good assistance in getting a feel for the quality of the results – however, the statement about the correctness of the results may be incorrect! To gain additional confidence, it makes sense to use other algorithms for deriving the zeta values and make comparisons.
