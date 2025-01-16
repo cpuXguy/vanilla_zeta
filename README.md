@@ -3,7 +3,7 @@ RIEMANN ZETA FUNCTION across the FULL COMPLEX PLANE.<br>
 & GAMMA FUNCTION across the FULL COMPLEX PLANE.<br>
 Try it out immediately on: WWW.ZETA-CALCULATOR.COM<br>
 
-**Guide to using vanilla_zeta() and vanilla_gamma() function<br>(using the Zeta function as example)**<br>
+**Guide to using the vanilla_zeta() and vanilla_gamma() functions.<br>(using the Zeta function as example)**<br>
 
 ***
 Note: I take no responsibility for the correctness of the results! As one should understand, calculating Zeta/Gamma values and verifying them is a challenging task. Therefore, any output from vanilla_zeta()/vanilla_gamma() should be considered as a value recommendation, and it may differ significantly from the actual results.
