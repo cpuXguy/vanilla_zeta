@@ -2,15 +2,15 @@
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 004     | Yes                |
+| Version                      | Supported    |
+| ---------------------------- | ------------ |
+| 004 /Zeta                    | Yes          |
+| T01 / Testversion! /Gamma    | Yes          |
 Future versions will be supported as the project evolves.
 
 ## Reporting a Vulnerability
 
-Since this project consists of a single JavaScript function with a simple input and return behavior,
-there are no known security concerns at the moment.
+Since these projects each consist of a single JavaScript function with simple input and return behavior, there are no known security concerns at the moment.
 
 However, if you believe you’ve discovered a security issue, please report it through the contact page at WWW.ZETA-CALCULATOR.COM.
 You can submit your report via the provided email address.
