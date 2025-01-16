@@ -6,7 +6,7 @@ Try it out immediately on: WWW.ZETA-CALCULATOR.COM<br>
 **Guide to using vanilla_zeta() and vanilla_gamma() function<br>(using the Zeta function as example)**<br>
 
 ***
-Note: I take no responsibility for the correctness of the results! As one should understand, calculating zeta/gamma values and verifying them is a challenging task. Therefore, any output from vanilla_zeta()/vanilla_gamma() should be considered as a value recommendation, and it may differ significantly from the actual results.
+Note: I take no responsibility for the correctness of the results! As one should understand, calculating Zeta/Gamma values and verifying them is a challenging task. Therefore, any output from vanilla_zeta()/vanilla_gamma() should be considered as a value recommendation, and it may differ significantly from the actual results.
 ***
 
 **Execute the vanilla_zeta function / Step 1: Declare Inputs.**<br>
@@ -51,7 +51,7 @@ Output Descriptions:<br>
 
 Outputs [0] to [3]:<br>
 The interpretation is self-explanatory.<br>
-With the given input, the first nontrivial zero of the zeta function should approximately be obtained, i.e., = 0 + 0i.<br>
+With the given input, the first nontrivial zero of the Zeta function should approximately be obtained, i.e., = 0 + 0i.<br>
 
 Output[5]:<br>
 If nothing went wrong during the calculation, output[5] is 'true'.<br>
@@ -69,4 +69,4 @@ Now if the value is greater than '0' and at most '0.999999999999999', convergenc
 The exact interpretation of the value is simple - the closer it approaches '1', the better the convergence, which often indicates more accurate results.<br>
 
 ATTENTION to Output[4] - Result Verification / Trust:<br>
-This feature provides good assistance in getting a feel for the quality of the results – however, the statement about the correctness of the results may be incorrect! To gain additional confidence, it makes sense to use other algorithms for deriving the zeta values and make comparisons.
+This feature provides good assistance in getting a feel for the quality of the results – however, the statement about the correctness of the results may be incorrect! To gain additional confidence, it makes sense to use other algorithms for deriving the Zeta values and make comparisons.
