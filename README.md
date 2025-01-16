@@ -1,11 +1,12 @@
-# vanilla_zeta()<br>
+# vanilla_zeta() & vanilla_gamma()<br>
 RIEMANN ZETA FUNCTION across the FULL COMPLEX PLANE.<br>
+& GAMMA FUNCTION across the FULL COMPLEX PLANE.<br>
 Try it out immediately on: WWW.ZETA-CALCULATOR.COM<br>
 
-**How to use the vanilla_zeta() function - Guide:**<br>
+**Guide to using vanilla_zeta() and vanilla_gamma() function<br>(using the Zeta function as example)**<br>
 
 ***
-Note: I take no responsibility for the correctness of the results! As one should understand, calculating zeta values and verifying them is a challenging task. Therefore, any output from vanilla_zeta() should be considered as a value recommendation, and it may differ significantly from the actual results.
+Note: I take no responsibility for the correctness of the results! As one should understand, calculating zeta/gamma values and verifying them is a challenging task. Therefore, any output from vanilla_zeta()/vanilla_gamma() should be considered as a value recommendation, and it may differ significantly from the actual results.
 ***
 
 **Execute the vanilla_zeta function / Step 1: Declare Inputs.**<br>
