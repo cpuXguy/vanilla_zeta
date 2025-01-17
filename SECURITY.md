@@ -5,7 +5,7 @@
 | Version                      | Supported    |
 | ---------------------------- | ------------ |
 | 004 /Zeta                    | Yes          |
-| T01 / Testversion! /Gamma    | Yes          |
+| Testversion! T02 /Gamma      | Yes          |
 Future versions will be supported as the project evolves.
 
 ## Reporting a Vulnerability
