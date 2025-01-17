@@ -23,16 +23,17 @@
  * Copy area: */
 
 function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
-    // ###############
-    // Version : Testversion T02!
-    // Come back in a few days to gain access to the finalized document.
-    // Released: Jan. 17, 2025
+    // #################################
+    // Version : T03 /Testversion!
+    // Come back in a few days to gain
+    // access to the finalized document.
+    // Released: Jan. 18, 2025
     // Location: www.zeta-calculator.com
-    // ###############
+    // #################################
     if(typeof v$g$_000==='undefined'){
-        // preSettings_______________________
+        // preSettings______________________
         v$g$_111=true; // showTimeWithMsUnit
-        // endPreSettings____________________
+        // endPreSettings___________________
         v$g$_080();
     };
     function v$g$_080(){
@@ -61,9 +62,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_005[1]=v$g$_001;
         v$g$_005[2]=false;
         var v$g$_006=v$g$_101(v$g$_102,v$g$_103);
-        if(v$g$_006[2]==false){
-            return v$g$_005;
-        };
+        if(v$g$_006[2]==false){return v$g$_005};
         v$g$_005[2]=true;
         var v$g$_007=0;
         var v$g$_008=0;
@@ -90,8 +89,6 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         };
         v$g$_011=v$g$_010[0];
         v$g$_012=v$g$_010[1];
-        v$g$_013=v$g$_011;
-        v$g$_014=v$g$_012;
         v$g$_013=v$g$_006[0];
         v$g$_014=v$g$_006[1];
         var v$g$_015=v$g$_013*v$g$_007-v$g$_014*v$g$_008;
@@ -205,9 +202,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
                 var v$g$_071=v$g$_069*v$g$_053-v$g$_070*v$g$_054;
                 var v$g$_072=v$g$_069*v$g$_054+v$g$_070*v$g$_053;
                 var v$g$_073=v$g$_098(v$g$_071,v$g$_072);
-                if(v$g$_071==0&&v$g$_072==0){
-                    v$g$_073=false;
-                };
+                if(v$g$_071==0&&v$g$_072==0){v$g$_073=false};
                 if(v$g$_063==0){v$g$_073=false};
                 if(v$g$_068==0){v$g$_073=false};
                 if(v$g$_073==true){
@@ -270,11 +265,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
             if(v$g$_107>=0){
                 if(v$g$_108<0){v$g$_085=2*v$g$_113-v$g$_085};
             }else{
-                if(v$g$_108>=0){
-                    v$g$_085=v$g$_113-v$g$_085;
-                }else{
-                    v$g$_085=v$g$_113+v$g$_085;
-                };
+                if(v$g$_108>=0){v$g$_085=v$g$_113-v$g$_085}else{v$g$_085=v$g$_113+v$g$_085};
             };
         }else{
             v$g$_085=0;
@@ -338,11 +329,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_139[3]=v$g$_002;
         v$g$_139[4]=v$g$_002;
         v$g$_139[5]=false;
-        if(v$g$_111==true){
-            v$g$_139[6]='0 ms';
-        }else{
-            v$g$_139[6]=0;
-        };
+        if(v$g$_111==true){v$g$_139[6]='0 ms'}else{v$g$_139[6]=0};
         return v$g$_139;
     };
     v$g$_effort_adjust(v$g$_136);
@@ -370,21 +357,13 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         var v$g$_117;
         var v$g$_116=v$g$_134;
         v$g$_116=1-v$g$_116;
-        if(v$g$_116>=-3){
-            v$g$_117=v$g$_F2(v$g$_116,v$g$_135);
-        }else{
-            v$g$_117=v$g$_F1(v$g$_116,v$g$_135);
-        };
+        if(v$g$_116>=-3){v$g$_117=v$g$_F2(v$g$_116,v$g$_135)}else{v$g$_117=v$g$_F1(v$g$_116,v$g$_135)};
         var v$g$_118;
         if(v$g$_117[2]==false){v$g$_119=false};
         if(v$g$_119==true){
             v$g$_117[1]=-v$g$_117[1];
             v$g$_116=v$g$_134;
-            if(v$g$_116>=-3){
-                v$g$_118=v$g$_F2(v$g$_116,v$g$_135);
-            }else{
-                v$g$_118=v$g$_F1(v$g$_116,v$g$_135);
-            };
+            if(v$g$_116>=-3){v$g$_118=v$g$_F2(v$g$_116,v$g$_135)}else{v$g$_118=v$g$_F1(v$g$_116,v$g$_135)};
             if(v$g$_118[2]==false){v$g$_119=false};
         };
         if(v$g$_119==true){
@@ -419,23 +398,15 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     };
     var v$g$_092=-1;
     if(v$g$_137==true){
-        if(v$g$_119==true){
-            v$g$_092=v$g$_calculate_trust(v$g$_090,v$g$_091,v$g$_130,v$g$_131);
-            if(v$g$_098(v$g$_092)==false){v$g$_092=0};
-        }else{
-            v$g$_092=0;
-        };
+        if(v$g$_119==true){v$g$_092=v$g$_calculate_trust(v$g$_090,v$g$_091,v$g$_130,v$g$_131)}else{v$g$_092=0};
+        if(v$g$_098(v$g$_092)==false){v$g$_092=0};
     };
     v$g$_094[4]=v$g$_092;
     v$g$_094[5]=v$g$_095;
     v$g$_089=performance.now()-v$g$_089;
     v$g$_089=Math.floor(v$g$_089);
-    if(v$g$_111==true){
-        v$g$_094[6]=Math.floor(v$g$_089).toString()+' ms';
-    }else{
-        v$g$_094[6]=Math.floor(v$g$_089);
-    };
-    return v$g$_094;
+    if(v$g$_111==true){v$g$_094[6]=Math.floor(v$g$_089).toString()+' ms'}else{v$g$_094[6]=Math.floor(v$g$_089)};
+    return v$g$_094; // MainReturn vanilla_gamma() 
     // ****** MAIN PROGRAM END ******
     // --- EDIT start ---
     function v$g$_alert_manager(alert_nr){
@@ -447,14 +418,14 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         if(v$g$_096==false){alert('unknown alarm!')};
     };
     function v$g$_effort_adjust(v$g$_112){
-        v$g$_003=new Array(4);
+        v$g$_003=new Array(5);
         v$g$_003[0]=v$g$_112;          // effort_reference
-        // Effort adjust start ______________________________________
+        // Effort adjust start _________________________________
         v$g$_003[1]=v$g$_003[0]**2;    // effort_adjust_F6
         v$g$_003[2]=v$g$_003[0]**1.62; // effort_adjust_F2verify
         v$g$_003[3]=v$g$_003[0]**2;    // effort_adjust_F6verify
         v$g$_003[4]=1.000;             // amplifier_F6
-        // Effort adjust end ________________________________________
+        // Effort adjust end ___________________________________
         // Value range monitoring: 0<= effortValue <=1
         for(var v$g$_097=0;v$g$_097<v$g$_003.length-1;v$g$_097++){
             if(v$g$_003[v$g$_097]<0){v$g$_alert_manager(1)};
@@ -527,7 +498,7 @@ function TEST_vanilla_gamma() {
 
 }; // Test vanilla_gamma() functionEnd
 
-// Set to 'true' to enable test mode for the vanilla_gamma function.
+// Set to 'true' to enable test mode for the vanilla_gamma() function.
 var enableTestMode = false;
 if (enableTestMode) {
     TEST_vanilla_gamma();
