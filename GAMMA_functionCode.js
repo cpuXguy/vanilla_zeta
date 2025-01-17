@@ -24,9 +24,9 @@
 
 function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // ###############
-    // Version : Testversion T01!
+    // Version : Testversion T02!
     // Come back in a few days to gain access to the finalized document.
-    // Released: Jan. 16, 2025
+    // Released: Jan. 17, 2025
     // Location: www.zeta-calculator.com
     // ###############
     if(typeof v$g$_000==='undefined'){
@@ -198,13 +198,17 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
             v$g$_066=v$g$_053;
             v$g$_053=v$g$_053*v$g$_064-v$g$_054*v$g$_065;
             v$g$_054=v$g$_066*v$g$_065+v$g$_054*v$g$_064;
-            if((v$g$_023-1)%100==0||v$g$_023==v$g$_052||v$g$_115==true){
+            if((v$g$_023-1)%100==0||v$g$_023==v$g$_052||v$g$_115==true||v$g$_063==0){
                 var v$g$_068=v$g$_023**v$g$_102;
                 var v$g$_069=v$g$_068*Math.cos(-v$g$_103*Math.log(v$g$_023));
                 var v$g$_070=-v$g$_068*Math.sin(-v$g$_103*Math.log(v$g$_023));
                 var v$g$_071=v$g$_069*v$g$_053-v$g$_070*v$g$_054;
                 var v$g$_072=v$g$_069*v$g$_054+v$g$_070*v$g$_053;
                 var v$g$_073=v$g$_098(v$g$_071,v$g$_072);
+                if(v$g$_071==0&&v$g$_072==0){
+                    v$g$_073=false;
+                };
+                if(v$g$_063==0){v$g$_073=false};
                 if(v$g$_068==0){v$g$_073=false};
                 if(v$g$_073==true){
                     v$g$_061=v$g$_053;
@@ -213,12 +217,16 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
                     v$g$_059=v$g$_072;
                     v$g$_060=v$g$_023;
                 }else{
-                    if(v$g$_115==false&&v$g$_060>0){
+                    if(v$g$_115==false&&v$g$_060>0&&v$g$_063!=0){
                         v$g$_023=v$g$_060;
                         v$g$_053=v$g$_061;
                         v$g$_054=v$g$_062;
                     }else{
                         v$g$_023=v$g$_110;
+                        if(v$g$_063==0){
+                            v$g$_058=v$g$_002;
+                            v$g$_059=v$g$_002;
+                        };
                     };
                     v$g$_115=true;
                 };
