@@ -1,6 +1,6 @@
 # vanilla_zeta() & vanilla_gamma()<br>
 RIEMANN ZETA FUNCTION across the FULL COMPLEX PLANE.<br>
-& GAMMA FUNCTION across the FULL COMPLEX PLANE.<br>
+& EULER GAMMA FUNCTION across the FULL COMPLEX PLANE.<br>
 Try it out immediately on: WWW.ZETA-CALCULATOR.COM<br>
 
 **Guide to using the vanilla_zeta() and vanilla_gamma() functions.<br>(using the Zeta function as example)**<br>
