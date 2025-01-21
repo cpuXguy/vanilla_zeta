@@ -1,33 +1,14 @@
-/*
- * Bonus: The Gamma Function - "vanilla_gamma()"
- * 
- * This function behaves similarly to the vanilla_zeta() function.
- * That means you can use the guide for vanilla_zeta() for vanilla_gamma() as well.
- * Moreover, the entire handling of vanilla_gamma() is identical to vanilla_zeta().
- * 
- * Please note:
- * - This is a test version and is subject to change.
- * - Come back in a few days to gain access to the finalized document.
- * 
- * Copy the following functions into your project:
- * 
- * Function: vanilla_gamma()
- * Function optional: Test_vanilla_gamma() for immediate testing of vanilla_gamma()
- * 
- * To copy the functions, follow these steps:
- * 
- * 1. Select the code (including comments).
- * 2. Press (Ctrl + C) on your keyboard to copy.
- * 3. Paste the copied code into your project by pressing (Ctrl + V).
- * 
- * Copy area: */
+// JavaScript Method for Evaluating the Euler Gamma Function:
+// Handling Complex and Negative Real Numbers.
+// In line 486, you can activate the test function:
+// Follow the program flow afterward to understand its workings.
+// For full understanding, visit: WWW.ZETA-CALCULATOR.COM
+// My best wishes for the success of your ventures!
 
 function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // #################################
-    // Version : T03 /Testversion!
-    // Come back in a few days to gain
-    // access to the finalized document.
-    // Released: Jan. 18, 2025
+    // Version : 001
+    // Released: Jan. 21, 2025
     // Location: www.zeta-calculator.com
     // #################################
     if(typeof v$g$_000==='undefined'){
@@ -355,6 +336,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     if(v$g$_095==true&&v$g$_137==true){
         v$g$_119=true;
         var v$g$_117;
+        if(Math.abs(v$g$_134-0.5)<10**(-10)){v$g$_134=0.5-10**(-10)};
         var v$g$_116=v$g$_134;
         v$g$_116=1-v$g$_116;
         if(v$g$_116>=-3){v$g$_117=v$g$_F2(v$g$_116,v$g$_135)}else{v$g$_117=v$g$_F1(v$g$_116,v$g$_135)};
@@ -372,9 +354,11 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
             var v$g$_122=v$g$_118[0];
             var v$g$_123=v$g$_118[1];
             var v$g$_126=v$g$_122**2+v$g$_123**2;
-            var v$g$_124=(v$g$_120*v$g$_122+v$g$_121*v$g$_123)/v$g$_126;
-            var v$g$_125=(v$g$_122*v$g$_121-v$g$_120*v$g$_123)/v$g$_126;
-            var v$g$_127=v$g$_101(1-v$g$_134, v$g$_135);
+            var v$g$_124;
+            var v$g$_125;
+            v$g$_124=(v$g$_120*v$g$_122+v$g$_121*v$g$_123)/v$g$_126;
+            v$g$_125=(v$g$_122*v$g$_121-v$g$_120*v$g$_123)/v$g$_126;
+            var v$g$_127=v$g$_101(1-v$g$_134,v$g$_135);
             v$g$_127[1]=-v$g$_127[1];
             var v$g$_128=v$g$_127[0];
             var v$g$_129=v$g$_127[1];
@@ -404,7 +388,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     v$g$_094[4]=v$g$_092;
     v$g$_094[5]=v$g$_095;
     v$g$_089=performance.now()-v$g$_089;
-    v$g$_089=Math.floor(v$g$_089);
+    v$g$_089=Math.round(v$g$_089);
     if(v$g$_111==true){v$g$_094[6]=Math.floor(v$g$_089).toString()+' ms'}else{v$g$_094[6]=Math.floor(v$g$_089)};
     return v$g$_094; // MainReturn vanilla_gamma() 
     // ****** MAIN PROGRAM END ******
@@ -473,7 +457,7 @@ function TEST_vanilla_gamma() {
     output_array[3]: Polar angle result of Gamma in radians
     output_array[4]: Trust value of the calculation
     output_array[5]: Boolean indicating if the calculation was successful
-    output_array[6]: Process time of 'vanilla_zeta()' in milliseconds
+    output_array[6]: Process time of 'vanilla_gamma()' in milliseconds
     */
 
     // Handle the result of the calculation
