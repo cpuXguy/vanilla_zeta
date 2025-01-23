@@ -1,20 +1,27 @@
 // JavaScript Method for Evaluating the Euler Gamma Function:
 // Handling Complex and Negative Real Numbers.
-// In line 486, you can activate the test function:
+// In line 508, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
 
 function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // #################################
-    // Version : 001
-    // Released: Jan. 21, 2025
+    // Version : 003
+    // Released: Jan. 24, 2025
     // Location: www.zeta-calculator.com
     // #################################
     if(typeof v$g$_000==='undefined'){
-        // preSettings______________________
-        v$g$_111=true; // showTimeWithMsUnit
-        // endPreSettings___________________
+        // Pre-settings_________________
+        // 'ms' for milliseconds written in the result time-output.
+        v$g$_111 = true; // showTimeWithMsUnit: Default= true
+        //______________________________
+        // Adapted calculation near results approaching zero.
+        // If 'true': this can lower the strictness
+        // for the calculation of the Trust-Value.
+        v$g$_146 = false; // adaptedZero: Default= false
+        //______________________________
+        // End of pre-settings_________
         v$g$_080();
     };
     function v$g$_080(){
@@ -36,6 +43,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_004.push(5/66);
         v$g$_110=Number.MAX_SAFE_INTEGER;
         v$g$_113=Math.PI;
+        v$g$_148=undefined;
     };
     function v$g$_F1(v$g$_102,v$g$_103){
         var v$g$_005=new Array(3);
@@ -168,6 +176,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         var v$g$_066=v$g$_053;
         var v$g$_067=0;
         var v$g$_115=false;
+        var v$g$_149=v$g$_148;
         for(var v$g$_023=1;v$g$_023<=v$g$_052;v$g$_023++){
             v$g$_067=v$g$_055+v$g$_023;
             v$g$_063=(v$g$_067**2+v$g$_056**2)/v$g$_023;
@@ -193,6 +202,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
                     v$g$_059=v$g$_072;
                     v$g$_060=v$g$_023;
                 }else{
+                    if(v$g$_149==true){v$g$_063=0};
                     if(v$g$_115==false&&v$g$_060>0&&v$g$_063!=0){
                         v$g$_023=v$g$_060;
                         v$g$_053=v$g$_061;
@@ -205,6 +215,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
                         };
                     };
                     v$g$_115=true;
+                    v$g$_148=true;
                 };
             };
         };
@@ -302,6 +313,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     var v$g$_136=approximationEffort;
     var v$g$_137=verifyResult_onOff;
     var v$g$_138=v$g$_140(v$g$_134,v$g$_135,v$g$_136,v$g$_137);
+    v$g$_148=false;
     if(v$g$_138==false){
         var v$g$_139=new Array(7);
         v$g$_139[0]=v$g$_002;
@@ -333,9 +345,17 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     var v$g$_119=false;
     var v$g$_130=v$g$_001;
     var v$g$_131=v$g$_001;
-    if(v$g$_095==true&&v$g$_137==true){
+    if(v$g$_095==true&&v$g$_137==true&&v$g$_148==false){
+        v$g$_148=true;
         v$g$_119=true;
         var v$g$_117;
+        if((Math.abs(v$g$_134-1)<10**(-5)||Math.abs(v$g$_134-3)<10**(-5))&&Math.abs(v$g$_135)<10**(-5)){
+            if(Math.abs(v$g$_134-1)<10**(-5)){
+                if(v$g$_134>=1){v$g$_134=1+10**(-5)}else{v$g$_134=1-10**(-5)};
+            }else{
+                if(v$g$_134>=3){v$g$_134=3+10**(-5)}else{v$g$_134=3-10**(-5)};
+            };
+        };
         if(Math.abs(v$g$_134-0.5)<10**(-10)){v$g$_134=0.5-10**(-10)};
         var v$g$_116=v$g$_134;
         v$g$_116=1-v$g$_116;
@@ -390,16 +410,16 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     v$g$_089=performance.now()-v$g$_089;
     v$g$_089=Math.round(v$g$_089);
     if(v$g$_111==true){v$g$_094[6]=Math.floor(v$g$_089).toString()+' ms'}else{v$g$_094[6]=Math.floor(v$g$_089)};
-    return v$g$_094; // MainReturn vanilla_gamma() 
+    return v$g$_094; // MainReturn vanilla_gamma()
     // ****** MAIN PROGRAM END ******
     // --- EDIT start ---
     function v$g$_alert_manager(alert_nr){
         var v$g$_096=false;
-        // _____________________________________________________________________
+        // _______________________________________________________________________
         if(alert_nr==1){v$g$_096=true;alert('error_effort_declare:\neffort < 0')};
         if(alert_nr==2){v$g$_096=true;alert('error_effort_declare:\neffort > 1')};
-        // _____________________________________________________________________
-        if(v$g$_096==false){alert('unknown alarm!')};
+        // _______________________________________________________________________
+        if(v$g$_096==false){alert('unknown alert: vanilla_gamma()')};
     };
     function v$g$_effort_adjust(v$g$_112){
         v$g$_003=new Array(5);
@@ -407,7 +427,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         // Effort adjust start _________________________________
         v$g$_003[1]=v$g$_003[0]**2;    // effort_adjust_F6
         v$g$_003[2]=v$g$_003[0]**1.62; // effort_adjust_F2verify
-        v$g$_003[3]=v$g$_003[0]**2;    // effort_adjust_F6verify
+        v$g$_003[3]=1/2*v$g$_003[1];   // effort_adjust_F6verify
         v$g$_003[4]=1.000;             // amplifier_F6
         // Effort adjust end ___________________________________
         // Value range monitoring: 0<= effortValue <=1
@@ -419,7 +439,8 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     function v$g$_calculate_trust(v$g$_resultValueReal,v$g$_resultValueImag,v$g$_checkValueReal,v$g$_checkValueImag){
         // Calculate the difference between the result- and check number
         var delta_resChk=((v$g$_resultValueReal-v$g$_checkValueReal)**2+(v$g$_resultValueImag-v$g$_checkValueImag)**2)**(0.5);
-        delta_resChk=delta_resChk/((v$g$_resultValueReal**2+v$g$_resultValueImag**2)**(0.5));
+        var v$g$_147=(v$g$_resultValueReal**2+v$g$_resultValueImag**2)**(0.5);
+        if(v$g$_147>1||v$g$_146==false){delta_resChk=delta_resChk/v$g$_147}else{delta_resChk=delta_resChk*v$g$_147};
         return v$g$_100(delta_resChk); // Transform the difference into a trust value
     };
     function v$g$_100(v$g$_109){
@@ -434,13 +455,14 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         if(v$g$_109<0){v$g$_109=0};
         if(v$g$_109>1){v$g$_109=1};
         v$g$_109=v$g$_109*0.999999999999999;
+        if(v$g$_098(v$g$_109)==false){v$g$_109=0};
         return v$g$_109;
     };
     // --- EDIT end ---
 }; // vanilla_gamma() functionEnd
 
-function TEST_vanilla_gamma() {
-    
+function Test_vanilla_gamma() {
+
     // Inputs: ensure that the inputs comply with the specified ranges, or the process will fail.
     var input_Real = 7;            // Real part:      -Number.MAX_VALUE <= input_Real <= Number.MAX_VALUE
     var input_Imag = 4;            // Imaginary part: -Number.MAX_VALUE <= input_Imag <= Number.MAX_VALUE
@@ -449,7 +471,7 @@ function TEST_vanilla_gamma() {
 
     // Execute the vanilla_gamma function
     var output_array = vanilla_gamma(input_Real, input_Imag, input_Effort, input_TrustEnabled);
-    
+
     /* Output Descriptions:
     output_array[0]: Real result of Gamma
     output_array[1]: Imaginary result of Gamma
@@ -483,9 +505,9 @@ function TEST_vanilla_gamma() {
 }; // Test vanilla_gamma() functionEnd
 
 // Set to 'true' to enable test mode for the vanilla_gamma() function.
-var enableTestMode = false;
-if (enableTestMode) {
-    TEST_vanilla_gamma();
+var v$g$_isTestModeEnabled = false;
+if (v$g$_isTestModeEnabled) {
+    Test_vanilla_gamma();
     alert('Test_vanilla_gamma() completed.');
 };
 
