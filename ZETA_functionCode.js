@@ -1,20 +1,32 @@
 // JavaScript Method for Evaluating the Riemann Zeta Function:
 // Handling Complex and Negative Real Numbers.
-// In line 687, you can activate the test function:
+// In line 710, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
 
 function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
-    // ###############
-    // Version: 004
-    // Released: Nov. 2, 2024
+    // #################################
+    // Version : 005
+    // Released: Jan. 23, 2025
     // Location: www.zeta-calculator.com
-    // ###############
+    // #################################
     if(typeof v$z$_000==='undefined'){
-        // preSettings_______________________
-        v$z$_198=true; // showTimeWithMsUnit
-        // endPreSettings____________________
+        // Pre-settings_________________
+        //______________________________
+        // 'ms' for milliseconds written in the result time-output.
+        v$z$_198 = true; // showTimeWithMsUnit: Default= true
+        //______________________________
+        // Adapted calculation near results approaching zero.
+        // If 'true': this can lower the strictness
+        // for the calculation of the Trust-Value.
+        v$z$_201 = true; // adaptedZero: Default= true
+        //______________________________
+        // Stabilizes Trivial Zeros
+        // (Not to be confused with the Non-Trivial Zeros!)
+        v$z$_205 = true; // stabilizeTrivial: Default= true
+        //______________________________
+        // End of pre-settings__________
         v$z$_128();
     };
     function v$z$_128(){
@@ -324,7 +336,7 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
                     v$z$_098=v$z$_111;
                     if(v$z$_099>-1){v$z$_099=v$z$_039};
                 }else{
-                    if(v$z$_099>-1){
+                    if(v$z$_099>-1&&v$z$_099!=1){
                         v$z$_039=v$z$_099;
                         v$z$_099=-1;
                         v$z$_092=v$z$_100;
@@ -446,11 +458,7 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
             if(v$z$_190>=0){
                 if(v$z$_191<0){v$z$_134=2*v$z$_200-v$z$_134};
             }else{
-                if(v$z$_191>=0){
-                    v$z$_134=v$z$_200-v$z$_134;
-                }else{
-                    v$z$_134=v$z$_200+v$z$_134;
-                };
+                if(v$z$_191>=0){v$z$_134=v$z$_200-v$z$_134}else{v$z$_134=v$z$_200+v$z$_134};
             };
         }else{
             v$z$_134=0;
@@ -496,11 +504,7 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         v$z$_145[3]=v$z$_002;
         v$z$_145[4]=v$z$_002;
         v$z$_145[5]=false;
-        if(v$z$_198==true){
-            v$z$_145[6]='0 ms';
-        }else{
-            v$z$_145[6]=0;
-        };
+        if(v$z$_198==true){v$z$_145[6]='0 ms'}else{v$z$_145[6]=0};
         return v$z$_145;
     };
     v$z$_effort_adjust(v$z$_143);
@@ -518,6 +522,7 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
     var v$z$_153=-1;
     if(v$z$_149==true){v$z$_153=0};
     if(v$z$_146>=-3){
+        if(v$z$_201==false&&Math.abs(v$z$_146-0.5)<10**(-10)){v$z$_146=0.5-10**(-10)};
         var v$z$_154=v$z$_F2(v$z$_146,v$z$_147,v$z$_011[1]);
         var v$z$_155=v$z$_154[0];
         var v$z$_156=v$z$_154[1];
@@ -530,19 +535,42 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         v$z$_150=v$z$_155;
         v$z$_151=v$z$_148*v$z$_156;
         v$z$_152=v$z$_154[2];
+        if(v$z$_205==true&&v$z$_152==true&&v$z$_146<0&&Math.abs(Math.round(v$z$_146)-v$z$_146)<10**(-12)){
+            if(Math.abs(v$z$_147)<10**(-12)&&Math.round(v$z$_146)%2==0){
+                v$z$_150=0;
+                v$z$_151=0;
+            };
+        };
     }else{
         if(v$z$_141>=-152){
+            var v$z$_203=false;
+            var v$z$_204=false;
+            if(v$z$_205==true&&Math.abs(Math.round(v$z$_146)-v$z$_146)<10**(-12)){
+                if(Math.abs(v$z$_147)<10**(-12)){
+                    if(Math.round(Math.abs(v$z$_146))%2==1){v$z$_204=true}else{v$z$_203=true};
+                };
+                if(v$z$_203==true){v$z$_204=true};
+            };
             var v$z$_160=v$z$_F1F3(v$z$_146,v$z$_147,false);
             var v$z$_161=v$z$_160[0];
             var v$z$_162=v$z$_160[1];
             var v$z$_163=v$z$_160[2];
             if(v$z$_163==2){v$z$_160[2]=false};
             if(v$z$_149==true&&v$z$_160[2]==true){
-                var v$z$_164=v$z$_F1F3(v$z$_146,v$z$_147,true);
-                var v$z$_165=v$z$_164[0];
-                var v$z$_166=v$z$_164[1];
-                if(v$z$_164[2]==true){v$z$_153=v$z$_calculate_trust(v$z$_161,v$z$_162,v$z$_165,v$z$_166)};
+                if(v$z$_205==true&&v$z$_204==true){
+                    if(Math.round(Math.abs(v$z$_146))%2==1){v$z$_146=Math.round(v$z$_146)-10**(-12)};
+                };
+                if(v$z$_203==false){
+                    var v$z$_164=v$z$_F1F3(v$z$_146,v$z$_147,true);
+                    var v$z$_165=v$z$_164[0];
+                    var v$z$_166=v$z$_164[1];
+                    if(v$z$_164[2]==true){v$z$_153=v$z$_calculate_trust(v$z$_161,v$z$_162,v$z$_165,v$z$_166)};
+                }else{
+                    v$z$_153=v$z$_calculate_trust(1,1,1,1);
+                };
             };
+            if(v$z$_203==true&&v$z$_163==true){v$z$_161=0};
+            if(v$z$_204==true&&v$z$_163==true){v$z$_162=0};
             v$z$_150=v$z$_161;
             v$z$_151=v$z$_148*v$z$_162;
             if(v$z$_163==2){v$z$_163=true};
@@ -581,20 +609,17 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
     v$z$_168[4]=v$z$_153;
     v$z$_168[5]=v$z$_169;
     if(v$z$_198==true){
-        v$z$_168[6]=Math.floor(v$z$_140).toString() + ' ms';
-    }else{
-        v$z$_168[6]=Math.floor(v$z$_140);
-    };
-    return v$z$_168;
+        v$z$_168[6]=Math.floor(v$z$_140).toString() + ' ms'}else{v$z$_168[6]=Math.floor(v$z$_140)};
+    return v$z$_168; // MainReturn vanilla_zeta()
     // ****** MAIN PROGRAM END ******
     // --- EDIT start ---
     function v$z$_alert_manager(alert_nr){
         var v$z$_170=false;
-        // _____________________________________________________________________
+        // _______________________________________________________________________
         if(alert_nr==1){v$z$_170=true;alert('error_effort_declare:\neffort < 0')};
         if(alert_nr==2){v$z$_170=true;alert('error_effort_declare:\neffort > 1')};
-        // _____________________________________________________________________
-        if(v$z$_170==false){alert('unknown alarm!')};
+        // _______________________________________________________________________
+        if(v$z$_170==false){alert('unknown alert: vanilla_zeta()')};
     };
     function v$z$_effort_adjust(v$z$_199){
         v$z$_011=new Array(7);
@@ -616,11 +641,8 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
     function v$z$_calculate_trust(v$z$_resultValueReal,v$z$_resultValueImag,v$z$_checkValueReal,v$z$_checkValueImag){
         // Calculate the difference between the result- and check number
         var delta_resChk=((v$z$_resultValueReal-v$z$_checkValueReal)**2+(v$z$_resultValueImag-v$z$_checkValueImag)**2)**(0.5);
-        if((v$z$_resultValueReal**2+v$z$_resultValueImag**2)**(0.5)>1){
-            delta_resChk=delta_resChk/((v$z$_resultValueReal**2+v$z$_resultValueImag**2)**(0.5));
-        }else{
-            delta_resChk=delta_resChk*((v$z$_resultValueReal**2+v$z$_resultValueImag**2)**(0.5));
-        };
+        var v$z$_202=(v$z$_resultValueReal**2+v$z$_resultValueImag**2)**(0.5);
+        if(v$z$_202>1||v$z$_201==false){delta_resChk=delta_resChk/v$z$_202}else{delta_resChk=delta_resChk*v$z$_202};
         return v$z$_177(delta_resChk); // Transform the difference into a trust value
     };
     function v$z$_177(v$z$_196){
@@ -635,13 +657,14 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         if(v$z$_196<0){v$z$_196=0};
         if(v$z$_196>1){v$z$_196=1};
         v$z$_196=v$z$_196*0.999999999999999;
+        if(v$z$_174(v$z$_196)==false){v$z$_196=0};
         return v$z$_196;
     };
     // --- EDIT end ---
 }; // vanilla_zeta() functionEnd
 
-function TEST_vanilla_zeta() {
-    
+function Test_vanilla_zeta() {
+
     // Inputs: ensure that the inputs comply with the specified ranges, or the process will fail.
     var input_Real = 0.5;                // Real part:      -Number.MAX_VALUE <= input_Real <= Number.MAX_VALUE
     var input_Imag = 14.134725141734693; // Imaginary part: -Number.MAX_VALUE <= input_Imag <= Number.MAX_VALUE
@@ -650,7 +673,7 @@ function TEST_vanilla_zeta() {
 
     // Execute the vanilla_zeta function
     var output_array = vanilla_zeta(input_Real, input_Imag, input_Effort, input_TrustEnabled);
-    
+
     /* Output Descriptions:
     output_array[0]: Real result of Zeta
     output_array[1]: Imaginary result of Zeta
@@ -684,9 +707,9 @@ function TEST_vanilla_zeta() {
 }; // Test vanilla_zeta() functionEnd
 
 // Set to 'true' to enable test mode for the vanilla_zeta function.
-var isTestModeEnabled = false;
-if (isTestModeEnabled) {
-    TEST_vanilla_zeta();
+var v$z$_isTestModeEnabled = false;
+if (v$z$_isTestModeEnabled) {
+    Test_vanilla_zeta();
     alert('Test_vanilla_zeta() completed.');
 };
 
