@@ -1,6 +1,6 @@
 // JavaScript Method for Evaluating the Euler Gamma Function:
 // Handling Complex and Negative Real Numbers.
-// In line 589, you can activate the test function:
+// In line 578, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
@@ -31,8 +31,8 @@ https://www.zeta-calculator.com/
 
 function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // #################################
-    // Version : 004
-    // Released: Jan. 25, 2025
+    // Version : 005
+    // Released: Feb. 7, 2025
     // Location: www.zeta-calculator.com
     // #################################
     if(typeof v$g$_000==='undefined'){
@@ -71,8 +71,6 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_012=undefined;
         v$g$_013=undefined;
         v$g$_014=undefined;
-        v$g$_015=new Array();
-        v$g$_016=new Array();
         v$g$_017=new Array();
         v$g$_018=new Array();
         v$g$_019=new Array();
@@ -213,15 +211,9 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         return v$g$_024;
     };
     function v$g$_F6(v$g$_022,v$g$_023,v$g$_041){
-        var v$g$_024=new Array(3);
-        if(v$g$_022==v$g$_014){
-            v$g$_024[0]=v$g$_012;
-            v$g$_024[1]=-v$g$_013;
-            v$g$_024[2]=true;
-            return v$g$_024;
-        };
-        var v$g$_076=Math.floor(v$g$_007[4]*v$g$_041*(5.216*10**6)+2000);
-        var v$g$_077=Math.floor(v$g$_076*v$g$_007[3]/v$g$_007[1]+1000);
+        var v$g$_076=Math.floor(v$g$_007[4]*v$g$_041*(5.2*10**6));
+        var v$g$_077=Math.floor((v$g$_076+22000)*v$g$_007[3]+2000);
+        v$g$_076=v$g$_076+26000;
         var v$g$_078=v$g$_022;
         var v$g$_079=v$g$_023;
         var v$g$_080=v$g$_078;
@@ -290,6 +282,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         };
         v$g$_078=v$g$_083;
         v$g$_079=v$g$_084;
+        var v$g$_024=new Array(3);
         v$g$_024[0]=v$g$_078;
         v$g$_024[1]=v$g$_079;
         v$g$_024[2]=v$g$_038(v$g$_078,v$g$_079);
@@ -385,8 +378,6 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     v$g$_012=undefined;
     v$g$_013=undefined;
     v$g$_014=undefined;
-    v$g$_015=new Array();
-    v$g$_016=new Array();
     v$g$_017=new Array();
     v$g$_018=new Array();
     v$g$_019=new Array();
@@ -494,20 +485,19 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     // --- EDIT start ---
     function v$g$_alert_manager(alert_nr){
         var v$g$_159=false;
-        // _______________________________________________________________________
-        if(alert_nr==1){v$g$_159=true;alert('error_effort_declare:\neffort < 0')};
-        if(alert_nr==2){v$g$_159=true;alert('error_effort_declare:\neffort > 1')};
-        if(alert_nr==3){v$g$_159=true;alert('errorValue[3]_higherValue[1]')};
-        // _______________________________________________________________________
-        if(v$g$_159==false){alert('unknown alert: vanilla_gamma()')};
+        // ________________________________________________________________________________________
+        if(alert_nr==1){v$g$_159=true;alert('vanilla_gamma()\nerror_effort_declare:\neffort < 0')};
+        if(alert_nr==2){v$g$_159=true;alert('vanilla_gamma()\nerror_effort_declare:\neffort > 1')};
+        // ________________________________________________________________________________________
+        if(v$g$_159==false){alert('vanilla_gamma():\nunknown alert')};
     };
     function v$g$_effort_adjust(v$g$_160){
         v$g$_007=new Array(5);
         v$g$_007[0]=v$g$_160;          // effort_reference
         // Effort adjust start _________________________________
-        v$g$_007[1]=v$g$_007[0]**3;    // effort_adjust_F6
+        v$g$_007[1]=v$g$_007[0]**2;    // effort_adjust_F6
         v$g$_007[2]=v$g$_007[0]**2;    // effort_adjust_F2verify
-        v$g$_007[3]=v$g$_007[1]*0.5;   // effort_adjust_F6verify
+        v$g$_007[3]=0.5;               // effort_adjust_F6verify
         v$g$_007[4]=1.000;             // amplifier_F6
         // Effort adjust end ___________________________________
         // Value range monitoring: 0<= effortValue <=1
@@ -515,7 +505,6 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
             if(v$g$_007[v$g$_161]<0){v$g$_alert_manager(1)};
             if(v$g$_007[v$g$_161]>1){v$g$_alert_manager(2)};
         };
-        if(v$g$_007[3]>v$g$_007[1]){v$g$_alert_manager(3)};
     };
     function v$g$_calculate_trust(v$g$_resultValueReal,v$g$_resultValueImag,v$g$_checkValueReal,v$g$_checkValueImag){
         // Calculate the difference between the result- and check number
