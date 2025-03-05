@@ -5,7 +5,7 @@
 | Version                      | Supported    |
 | ---------------------------- | ------------ |
 | 006 /Zeta                    | Yes          |
-| 005 /Gamma                   | Yes          |
+| 006 /Gamma                   | Yes          |
 Future versions will be supported as the project evolves.
 
 ## Reporting a Vulnerability
