@@ -1,6 +1,6 @@
 // JavaScript Method for Evaluating the Euler Gamma Function:
 // Handling Complex and Negative Real Numbers.
-// In line 578, you can activate the test function:
+// In line 560, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
@@ -31,8 +31,8 @@ https://www.zeta-calculator.com/
 
 function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // #################################
-    // Version : 005
-    // Released: Feb. 7, 2025
+    // Version : 006
+    // Released: Mar. 5, 2025
     // Location: www.zeta-calculator.com
     // #################################
     if(typeof v$g$_000==='undefined'){
@@ -71,11 +71,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_012=undefined;
         v$g$_013=undefined;
         v$g$_014=undefined;
-        v$g$_017=new Array();
-        v$g$_018=new Array();
-        v$g$_019=new Array();
-        v$g$_020=new Array();
-        v$g$_021=new Array();
+        v$g$_015=-3;
     };
     function v$g$_F1(v$g$_022,v$g$_023){
         var v$g$_024=new Array(3);
@@ -86,12 +82,12 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         if(v$g$_025[2]==false){return v$g$_024};
         v$g$_024[2]=true;
         var v$g$_027=new Array(3);
-        if(1-v$g$_022==v$g$_014){
+        if(Math.abs(1-v$g$_022-v$g$_014)<10**(-12)){
             v$g$_027[0]=v$g$_012;
             v$g$_027[1]=-v$g$_013;
             v$g$_027[2]=true;
         }else{
-            v$g$_027=v$g$_F6(1-v$g$_022,-v$g$_023,v$g$_007[3]);
+            v$g$_027=v$g$_F6(1-v$g$_022,-v$g$_023,v$g$_007[2]/2);
         };
         var v$g$_028=0;
         var v$g$_029=0;
@@ -133,21 +129,18 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     };
     function v$g$_F2(v$g$_022,v$g$_023){
         var v$g$_024=new Array(3);
-        var v$g$_039=v$g$_020.indexOf(v$g$_022);
-        if(v$g$_039>-1){
-            if(v$g$_021[v$g$_039]==-v$g$_023){
-                v$g$_024[0]=v$g$_017[v$g$_039];
-                v$g$_024[1]=-v$g$_018[v$g$_039];
-                v$g$_024[2]=v$g$_019[v$g$_039];
-                return v$g$_024;
-            };
+        if(v$g$_022<v$g$_015||(1-v$g$_022)<v$g$_015){
+            v$g$_024[0]=1;
+            v$g$_024[1]=0;
+            v$g$_024[2]=true;
+            return v$g$_024;
         };
         var v$g$_040=1;
         if(v$g$_023<0){
             v$g$_023=-v$g$_023;
             v$g$_040=-1;
         };
-        var v$g$_041 = v$g$_007[2];
+        var v$g$_041=v$g$_007[2];
         var v$g$_042=(3+5*v$g$_041)-v$g$_022;
         v$g$_042=Math.round(v$g$_042);
         if(v$g$_042<0){v$g$_042=0};
@@ -203,17 +196,12 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_024[0]=v$g$_055;
         v$g$_024[1]=v$g$_056*v$g$_040;
         v$g$_024[2]=v$g$_038(v$g$_055,v$g$_056);
-        v$g$_017.push(v$g$_024[0]);
-        v$g$_018.push(v$g$_024[1]);
-        v$g$_019.push(v$g$_024[2]);
-        v$g$_020.push(v$g$_022);
-        v$g$_021.push(v$g$_023*v$g$_040);
         return v$g$_024;
     };
     function v$g$_F6(v$g$_022,v$g$_023,v$g$_041){
-        var v$g$_076=Math.floor(v$g$_007[4]*v$g$_041*(5.2*10**6));
-        var v$g$_077=Math.floor((v$g$_076+22000)*v$g$_007[3]+2000);
-        v$g$_076=v$g$_076+26000;
+        var v$g$_076=Math.floor(v$g$_007[3]*v$g$_041*(5.2*10**6)+26000);
+        var v$g$_077=Math.floor(v$g$_076/2);
+        if(typeof v$g$_012!=='undefined'){v$g$_077=-1};
         var v$g$_078=v$g$_022;
         var v$g$_079=v$g$_023;
         var v$g$_080=v$g$_078;
@@ -378,11 +366,6 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     v$g$_012=undefined;
     v$g$_013=undefined;
     v$g$_014=undefined;
-    v$g$_017=new Array();
-    v$g$_018=new Array();
-    v$g$_019=new Array();
-    v$g$_020=new Array();
-    v$g$_021=new Array();
     if(v$g$_131==false){
         var v$g$_132=new Array(7);
         v$g$_132[0]=v$g$_006;
@@ -419,7 +402,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_140=true;
         var v$g$_143=new Array(3);
         var v$g$_144=10**(-5);
-        if((Math.abs(v$g$_127-1)<v$g$_144||Math.abs(v$g$_127-3)<v$g$_144)&&Math.abs(v$g$_128)<v$g$_144){
+        if((Math.abs(v$g$_127-1)<v$g$_144||Math.abs(v$g$_127+v$g$_015)<v$g$_144)&&Math.abs(v$g$_128)<v$g$_144){
             if(Math.abs(v$g$_127-1)<v$g$_144){
                 if(v$g$_127>=1){v$g$_127=1+v$g$_144}else{v$g$_127=1-v$g$_144};
             }else{
@@ -429,13 +412,13 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         if(Math.abs(v$g$_127-0.5)<10**(-10)){v$g$_127=0.5-10**(-10)};
         var v$g$_145=v$g$_127;
         v$g$_145=1-v$g$_145;
-        if(v$g$_145>=-3){v$g$_143=v$g$_F2(v$g$_145,v$g$_128)}else{v$g$_143=v$g$_F1(v$g$_145,v$g$_128)};
+        if(v$g$_145>=v$g$_015){v$g$_143=v$g$_F2(v$g$_145,v$g$_128)}else{v$g$_143=v$g$_F1(v$g$_145,v$g$_128)};
         var v$g$_146;
         if(v$g$_143[2]==false){v$g$_140=false};
         if(v$g$_140==true){
             v$g$_143[1]=-v$g$_143[1];
             v$g$_145=v$g$_127;
-            if(v$g$_145>=-3){v$g$_146=v$g$_F2(v$g$_145,v$g$_128)}else{v$g$_146=v$g$_F1(v$g$_145,v$g$_128)};
+            if(v$g$_145>=v$g$_015){v$g$_146=v$g$_F2(v$g$_145,v$g$_128)}else{v$g$_146=v$g$_F1(v$g$_145,v$g$_128)};
             if(v$g$_146[2]==false){v$g$_140=false};
         };
         if(v$g$_140==true){
@@ -492,13 +475,12 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         if(v$g$_159==false){alert('vanilla_gamma():\nunknown alert')};
     };
     function v$g$_effort_adjust(v$g$_160){
-        v$g$_007=new Array(5);
+        v$g$_007=new Array(4);
         v$g$_007[0]=v$g$_160;          // effort_reference
         // Effort adjust start _________________________________
-        v$g$_007[1]=v$g$_007[0]**2;    // effort_adjust_F6
+        v$g$_007[1]=v$g$_007[0];       // effort_adjust_F6
         v$g$_007[2]=v$g$_007[0]**2;    // effort_adjust_F2verify
-        v$g$_007[3]=0.5;               // effort_adjust_F6verify
-        v$g$_007[4]=1.000;             // amplifier_F6
+        v$g$_007[3]=1.000;             // amplifier_F6
         // Effort adjust end ___________________________________
         // Value range monitoring: 0<= effortValue <=1
         for(var v$g$_161=0;v$g$_161<v$g$_007.length-1;v$g$_161++){
