@@ -1,6 +1,6 @@
 // JavaScript Method for Evaluating the Euler Gamma Function:
 // Handling Complex and Negative Real Numbers.
-// In line 560, you can activate the test function:
+// In line 581, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
@@ -31,8 +31,8 @@ https://www.zeta-calculator.com/
 
 function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // #################################
-    // Version : 006
-    // Released: Mar. 5, 2025
+    // Version : 007
+    // Released: Mar. 10, 2025
     // Location: www.zeta-calculator.com
     // #################################
     if(typeof v$g$_000==='undefined'){
@@ -65,450 +65,471 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_008.push(-1/30);
         v$g$_008.push(0);
         v$g$_008.push(5/66);
-        v$g$_009=Number.MAX_SAFE_INTEGER;
-        v$g$_010=Math.PI;
-        v$g$_011=undefined;
+        v$g$_009=1-10**(-15);
+        v$g$_010=Number.MAX_SAFE_INTEGER;
+        v$g$_011=Math.PI;
         v$g$_012=undefined;
         v$g$_013=undefined;
         v$g$_014=undefined;
-        v$g$_015=-3;
+        v$g$_015=undefined;
+        v$g$_016=-3;
     };
-    function v$g$_F1(v$g$_022,v$g$_023){
-        var v$g$_024=new Array(3);
-        v$g$_024[0]=v$g$_005;
-        v$g$_024[1]=v$g$_005;
-        v$g$_024[2]=false;
-        var v$g$_025=v$g$_026(v$g$_022,v$g$_023);
-        if(v$g$_025[2]==false){return v$g$_024};
-        v$g$_024[2]=true;
-        var v$g$_027=new Array(3);
-        if(Math.abs(1-v$g$_022-v$g$_014)<10**(-12)){
-            v$g$_027[0]=v$g$_012;
-            v$g$_027[1]=-v$g$_013;
-            v$g$_027[2]=true;
+    function v$g$_F1(v$g$_017,v$g$_018){
+        var v$g$_019=new Array(3);
+        v$g$_019[0]=v$g$_005;
+        v$g$_019[1]=v$g$_005;
+        v$g$_019[2]=false;
+        var v$g$_020=v$g$_021(v$g$_017,v$g$_018);
+        if(v$g$_020[2]==false){return v$g$_019};
+        v$g$_019[2]=true;
+        var v$g$_022=new Array(3);
+        if(Math.abs(1-v$g$_017-v$g$_015)<10**(-12)){
+            v$g$_022[0]=v$g$_013;
+            v$g$_022[1]=-v$g$_014;
+            v$g$_022[2]=true;
         }else{
-            v$g$_027=v$g$_F6(1-v$g$_022,-v$g$_023,v$g$_007[2]/2);
+            v$g$_022=v$g$_F6(1-v$g$_017,-v$g$_018,v$g$_007[2]/2);
         };
+        var v$g$_023=0;
+        var v$g$_024=0;
+        v$g$_023=v$g$_022[0];
+        v$g$_024=v$g$_022[1];
+        if(v$g$_022[2]==false){
+            v$g$_019[2]=false;
+            return v$g$_019;
+        };
+        var v$g$_025=new Array();
+        var v$g$_026=0;
+        var v$g$_027=0;
         var v$g$_028=0;
         var v$g$_029=0;
-        v$g$_028=v$g$_027[0];
-        v$g$_029=v$g$_027[1];
-        if(v$g$_027[2]==false){
-            v$g$_024[2]=false;
-            return v$g$_024;
+        v$g$_025=v$g$_F2(1-v$g$_017,-v$g$_018);
+        if(v$g$_025[2]==false){
+            v$g$_019[2]=false;
+            return v$g$_019;
         };
-        var v$g$_030=new Array();
-        var v$g$_031=0;
-        var v$g$_032=0;
-        var v$g$_033=0;
-        var v$g$_034=0;
-        v$g$_030=v$g$_F2(1-v$g$_022,-v$g$_023);
-        if(v$g$_030[2]==false){
-            v$g$_024[2]=false;
-            return v$g$_024;
-        };
-        v$g$_031=v$g$_030[0];
-        v$g$_032=v$g$_030[1];
-        v$g$_033=v$g$_025[0];
-        v$g$_034=v$g$_025[1];
-        var v$g$_035=v$g$_033*v$g$_028-v$g$_034*v$g$_029;
-        var v$g$_036=v$g$_033*v$g$_029+v$g$_034*v$g$_028;
-        v$g$_033=v$g$_035;
-        v$g$_034=v$g$_036;
-        v$g$_035=v$g$_033*v$g$_031-v$g$_034*v$g$_032;
-        v$g$_036=v$g$_033*v$g$_032+v$g$_034*v$g$_031;
-        v$g$_033=v$g$_035;
-        v$g$_034=v$g$_036;
-        var v$g$_037=v$g$_038(v$g$_033,v$g$_034);
-        if(v$g$_027[2]==false){v$g$_037=false};
-        if(v$g$_030[2]==false){v$g$_037=false};
-        v$g$_024[0]=v$g$_033;
-        v$g$_024[1]=v$g$_034;
-        v$g$_024[2]=v$g$_037;
-        return v$g$_024;
+        v$g$_026=v$g$_025[0];
+        v$g$_027=v$g$_025[1];
+        v$g$_028=v$g$_020[0];
+        v$g$_029=v$g$_020[1];
+        var v$g$_030=v$g$_028*v$g$_023-v$g$_029*v$g$_024;
+        var v$g$_031=v$g$_028*v$g$_024+v$g$_029*v$g$_023;
+        v$g$_028=v$g$_030;
+        v$g$_029=v$g$_031;
+        v$g$_030=v$g$_028*v$g$_026-v$g$_029*v$g$_027;
+        v$g$_031=v$g$_028*v$g$_027+v$g$_029*v$g$_026;
+        v$g$_028=v$g$_030;
+        v$g$_029=v$g$_031;
+        var v$g$_032=v$g$_033(v$g$_028,v$g$_029);
+        if(v$g$_022[2]==false){v$g$_032=false};
+        if(v$g$_025[2]==false){v$g$_032=false};
+        v$g$_019[0]=v$g$_028;
+        v$g$_019[1]=v$g$_029;
+        v$g$_019[2]=v$g$_032;
+        return v$g$_019;
     };
-    function v$g$_F2(v$g$_022,v$g$_023){
-        var v$g$_024=new Array(3);
-        if(v$g$_022<v$g$_015||(1-v$g$_022)<v$g$_015){
-            v$g$_024[0]=1;
-            v$g$_024[1]=0;
-            v$g$_024[2]=true;
-            return v$g$_024;
+    function v$g$_F2(v$g$_017,v$g$_018){
+        var v$g$_019=new Array(3);
+        if(v$g$_017<v$g$_016||(1-v$g$_017)<v$g$_016){
+            v$g$_019[0]=1;
+            v$g$_019[1]=0;
+            v$g$_019[2]=true;
+            return v$g$_019;
         };
-        var v$g$_040=1;
-        if(v$g$_023<0){
-            v$g$_023=-v$g$_023;
-            v$g$_040=-1;
+        var v$g$_034=1;
+        if(v$g$_018<0){
+            v$g$_018=-v$g$_018;
+            v$g$_034=-1;
         };
-        var v$g$_041=v$g$_007[2];
-        var v$g$_042=(3+5*v$g$_041)-v$g$_022;
-        v$g$_042=Math.round(v$g$_042);
-        if(v$g$_042<0){v$g$_042=0};
-        var v$g$_043=(((Math.log(Math.abs(v$g$_023)+1)+1))**(0.9106*v$g$_041))-1;
-        if(v$g$_043>8.7714){v$g$_043=8.7714};
-        var v$g$_044=Math.round(2**(8+v$g$_043));
-        var v$g$_045=0;
-        var v$g$_046=0;
-        for(var v$g$_047=1;v$g$_047<=(v$g$_044-1);v$g$_047++){
-            v$g$_045=v$g$_045+Math.cos(v$g$_023*Math.log(v$g$_047))/v$g$_047**v$g$_022;
-            v$g$_046=v$g$_046-Math.sin(v$g$_023*Math.log(v$g$_047))/v$g$_047**v$g$_022;
+        var v$g$_035=v$g$_007[2];
+        var v$g$_036=(3+5*v$g$_035)-v$g$_017;
+        v$g$_036=Math.round(v$g$_036);
+        if(v$g$_036<0){v$g$_036=0};
+        var v$g$_037=(((Math.log(Math.abs(v$g$_018)+1)+1))**(0.9106*v$g$_035))-1;
+        if(v$g$_037>8.7714){v$g$_037=8.7714};
+        var v$g$_038=Math.round(2**(8+v$g$_037));
+        var v$g$_039=0;
+        var v$g$_040=0;
+        for(var v$g$_041=1;v$g$_041<=(v$g$_038-1);v$g$_041++){
+            v$g$_039=v$g$_039+Math.cos(v$g$_018*Math.log(v$g$_041))/v$g$_041**v$g$_017;
+            v$g$_040=v$g$_040-Math.sin(v$g$_018*Math.log(v$g$_041))/v$g$_041**v$g$_017;
         };
-        var v$g$_048=v$g$_022-1;
-        var v$g$_049=-v$g$_023;
-        var v$g$_050=v$g$_048**2+v$g$_049**2;
-        var v$g$_051=v$g$_044*v$g$_048/v$g$_050;
-        var v$g$_052=v$g$_044*v$g$_049/v$g$_050;
-        var v$g$_053=Math.cos(v$g$_023*Math.log(v$g$_044))/v$g$_044**v$g$_022;
-        var v$g$_054=-Math.sin(v$g$_023*Math.log(v$g$_044))/v$g$_044**v$g$_022;
-        var v$g$_055=v$g$_045+v$g$_053/2+v$g$_051*v$g$_053-v$g$_052*v$g$_054;
-        var v$g$_056=v$g$_046+v$g$_054/2+v$g$_051*v$g$_054+v$g$_052*v$g$_053;
-        var v$g$_057=Math.floor(v$g$_042/2);
-        var v$g$_058=2;
-        var v$g$_059=2;
-        var v$g$_060=0;
-        var v$g$_061=0;
-        for(var v$g$_062=1;v$g$_062<=v$g$_057;v$g$_062++){
-            var v$g$_063=v$g$_008[2*v$g$_062]/v$g$_059;
-            var v$g$_064=v$g$_022;
-            var v$g$_065=v$g$_023;
-            for(var v$g$_066=1;v$g$_066<=(2*v$g$_062-2);v$g$_066++){
-                var v$g$_067=v$g$_022+v$g$_066;
-                var v$g$_068=v$g$_064*v$g$_067-v$g$_065*v$g$_023;
-                var v$g$_069=v$g$_064*v$g$_023+v$g$_065*v$g$_067;
-                v$g$_064=v$g$_068;
-                v$g$_065=v$g$_069;
+        var v$g$_042=v$g$_017-1;
+        var v$g$_043=-v$g$_018;
+        var v$g$_044=v$g$_042**2+v$g$_043**2;
+        var v$g$_045=v$g$_038*v$g$_042/v$g$_044;
+        var v$g$_046=v$g$_038*v$g$_043/v$g$_044;
+        var v$g$_047=Math.cos(v$g$_018*Math.log(v$g$_038))/v$g$_038**v$g$_017;
+        var v$g$_048=-Math.sin(v$g$_018*Math.log(v$g$_038))/v$g$_038**v$g$_017;
+        var v$g$_049=v$g$_039+v$g$_047/2+v$g$_045*v$g$_047-v$g$_046*v$g$_048;
+        var v$g$_050=v$g$_040+v$g$_048/2+v$g$_045*v$g$_048+v$g$_046*v$g$_047;
+        var v$g$_051=Math.floor(v$g$_036/2);
+        var v$g$_052=2;
+        var v$g$_053=2;
+        var v$g$_054=0;
+        var v$g$_055=0;
+        for(var v$g$_056=1;v$g$_056<=v$g$_051;v$g$_056++){
+            var v$g$_057=v$g$_008[2*v$g$_056]/v$g$_053;
+            var v$g$_058=v$g$_017;
+            var v$g$_059=v$g$_018;
+            for(var v$g$_060=1;v$g$_060<=(2*v$g$_056-2);v$g$_060++){
+                var v$g$_061=v$g$_017+v$g$_060;
+                var v$g$_062=v$g$_058*v$g$_061-v$g$_059*v$g$_018;
+                var v$g$_063=v$g$_058*v$g$_018+v$g$_059*v$g$_061;
+                v$g$_058=v$g$_062;
+                v$g$_059=v$g$_063;
             };
-            v$g$_064=v$g$_064*v$g$_063;
-            v$g$_065=v$g$_065*v$g$_063;
-            var v$g$_070=v$g$_022+2*v$g$_062-1;
-            var v$g$_071=v$g$_023;
-            var v$g$_072=Math.cos(v$g$_071*Math.log(v$g$_044))/v$g$_044**v$g$_070;
-            var v$g$_073=-Math.sin(v$g$_071*Math.log(v$g$_044))/v$g$_044**v$g$_070;
-            var v$g$_074=v$g$_064*v$g$_072-v$g$_065*v$g$_073;
-            var v$g$_075=v$g$_064*v$g$_073+v$g$_065*v$g$_072;
-            v$g$_060=v$g$_060+v$g$_074;
-            v$g$_061=v$g$_061+v$g$_075;
-            v$g$_059=v$g$_059*(v$g$_058+1)*(v$g$_058+2);
-            v$g$_058=v$g$_058+2;
+            v$g$_058=v$g$_058*v$g$_057;
+            v$g$_059=v$g$_059*v$g$_057;
+            var v$g$_064=v$g$_017+2*v$g$_056-1;
+            var v$g$_065=v$g$_018;
+            var v$g$_066=Math.cos(v$g$_065*Math.log(v$g$_038))/v$g$_038**v$g$_064;
+            var v$g$_067=-Math.sin(v$g$_065*Math.log(v$g$_038))/v$g$_038**v$g$_064;
+            var v$g$_068=v$g$_058*v$g$_066-v$g$_059*v$g$_067;
+            var v$g$_069=v$g$_058*v$g$_067+v$g$_059*v$g$_066;
+            v$g$_054=v$g$_054+v$g$_068;
+            v$g$_055=v$g$_055+v$g$_069;
+            v$g$_053=v$g$_053*(v$g$_052+1)*(v$g$_052+2);
+            v$g$_052=v$g$_052+2;
         };
-        v$g$_055=v$g$_055+v$g$_060;
-        v$g$_056=v$g$_056+v$g$_061;
-        v$g$_024[0]=v$g$_055;
-        v$g$_024[1]=v$g$_056*v$g$_040;
-        v$g$_024[2]=v$g$_038(v$g$_055,v$g$_056);
-        return v$g$_024;
+        v$g$_049=v$g$_049+v$g$_054;
+        v$g$_050=v$g$_050+v$g$_055;
+        v$g$_019[0]=v$g$_049;
+        v$g$_019[1]=v$g$_050*v$g$_034;
+        v$g$_019[2]=v$g$_033(v$g$_049,v$g$_050);
+        return v$g$_019;
     };
-    function v$g$_F6(v$g$_022,v$g$_023,v$g$_041){
-        var v$g$_076=Math.floor(v$g$_007[3]*v$g$_041*(5.2*10**6)+26000);
-        var v$g$_077=Math.floor(v$g$_076/2);
-        if(typeof v$g$_012!=='undefined'){v$g$_077=-1};
-        var v$g$_078=v$g$_022;
-        var v$g$_079=v$g$_023;
-        var v$g$_080=v$g$_078;
-        var v$g$_081=v$g$_079;
-        var v$g$_082=v$g$_078**2+v$g$_079**2;
-        v$g$_078=v$g$_078/v$g$_082;
-        v$g$_079=-v$g$_079/v$g$_082;
-        var v$g$_083=v$g$_005;
-        var v$g$_084=v$g$_005;
-        var v$g$_085=0;
-        var v$g$_086=v$g$_078;
-        var v$g$_087=v$g$_079;
-        var v$g$_088=0;
-        var v$g$_089=0;
-        var v$g$_090=0;
-        var v$g$_091=v$g$_078;
-        var v$g$_092=0;
-        var v$g$_093=false;
-        var v$g$_094=v$g$_011;
-        for(var v$g$_047=1;v$g$_047<=v$g$_076;v$g$_047++){
-            v$g$_092=v$g$_080+v$g$_047;
-            v$g$_088=(v$g$_092**2+v$g$_081**2)/v$g$_047;
-            v$g$_089=v$g$_092/v$g$_088;
-            v$g$_090=-v$g$_081/v$g$_088;
-            v$g$_091=v$g$_078;
-            v$g$_078=v$g$_078*v$g$_089-v$g$_079*v$g$_090;
-            v$g$_079=v$g$_091*v$g$_090+v$g$_079*v$g$_089;
-            if((v$g$_047-1)%100==0||v$g$_047==v$g$_076||v$g$_093==true||v$g$_088==0||v$g$_047==v$g$_077){
-                var v$g$_095=v$g$_047**v$g$_022;
-                var v$g$_096=v$g$_095*Math.cos(-v$g$_023*Math.log(v$g$_047));
-                var v$g$_097=-v$g$_095*Math.sin(-v$g$_023*Math.log(v$g$_047));
-                var v$g$_098=v$g$_096*v$g$_078-v$g$_097*v$g$_079;
-                var v$g$_099=v$g$_096*v$g$_079+v$g$_097*v$g$_078;
-                var v$g$_100=v$g$_038(v$g$_098,v$g$_099);
-                if(v$g$_098==0&&v$g$_099==0){v$g$_100=false};
-                if(v$g$_088==0){v$g$_100=false};
-                if(v$g$_095==0){v$g$_100=false};
-                if(v$g$_100==true){
-                    v$g$_086=v$g$_078;
-                    v$g$_087=v$g$_079;
-                    v$g$_083=v$g$_098;
-                    v$g$_084=v$g$_099;
-                    v$g$_085=v$g$_047;
-                    if(v$g$_047==v$g$_077&&typeof v$g$_012==='undefined'){
-                        v$g$_014=v$g$_022;
-                        v$g$_012=v$g$_083;
-                        v$g$_013=v$g$_084;
+    function v$g$_F6(v$g$_017,v$g$_018,v$g$_035){
+        var v$g$_070=Math.floor(v$g$_007[3]*v$g$_035*(5.2*10**6)+26000);
+        var v$g$_071=Math.floor(v$g$_070/2);
+        if(typeof v$g$_013!=='undefined'){v$g$_071=-1};
+        var v$g$_072=v$g$_017;
+        var v$g$_073=v$g$_018;
+        var v$g$_074=v$g$_072;
+        var v$g$_075=v$g$_073;
+        var v$g$_076=v$g$_072**2+v$g$_073**2;
+        v$g$_072=v$g$_072/v$g$_076;
+        v$g$_073=-v$g$_073/v$g$_076;
+        var v$g$_077=v$g$_005;
+        var v$g$_078=v$g$_005;
+        var v$g$_079=0;
+        var v$g$_080=v$g$_072;
+        var v$g$_081=v$g$_073;
+        var v$g$_082=0;
+        var v$g$_083=0;
+        var v$g$_084=0;
+        var v$g$_085=v$g$_072;
+        var v$g$_086=0;
+        var v$g$_087=false;
+        var v$g$_088=v$g$_012;
+        for(var v$g$_041=1;v$g$_041<=v$g$_070;v$g$_041++){
+            v$g$_086=v$g$_074+v$g$_041;
+            v$g$_082=(v$g$_086**2+v$g$_075**2)/v$g$_041;
+            v$g$_083=v$g$_086/v$g$_082;
+            v$g$_084=-v$g$_075/v$g$_082;
+            v$g$_085=v$g$_072;
+            v$g$_072=v$g$_072*v$g$_083-v$g$_073*v$g$_084;
+            v$g$_073=v$g$_085*v$g$_084+v$g$_073*v$g$_083;
+            if((v$g$_041-1)%100==0||v$g$_041==v$g$_070||v$g$_087==true||v$g$_082==0||v$g$_041==v$g$_071){
+                var v$g$_089=v$g$_041**v$g$_017;
+                var v$g$_090=v$g$_089*Math.cos(-v$g$_018*Math.log(v$g$_041));
+                var v$g$_091=-v$g$_089*Math.sin(-v$g$_018*Math.log(v$g$_041));
+                var v$g$_092=v$g$_090*v$g$_072-v$g$_091*v$g$_073;
+                var v$g$_093=v$g$_090*v$g$_073+v$g$_091*v$g$_072;
+                var v$g$_094=v$g$_033(v$g$_092,v$g$_093);
+                if(v$g$_092==0&&v$g$_093==0){v$g$_094=false};
+                if(v$g$_082==0){v$g$_094=false};
+                if(v$g$_089==0){v$g$_094=false};
+                if(v$g$_094==true){
+                    v$g$_080=v$g$_072;
+                    v$g$_081=v$g$_073;
+                    v$g$_077=v$g$_092;
+                    v$g$_078=v$g$_093;
+                    v$g$_079=v$g$_041;
+                    if(v$g$_041==v$g$_071&&typeof v$g$_013==='undefined'){
+                        v$g$_015=v$g$_017;
+                        v$g$_013=v$g$_077;
+                        v$g$_014=v$g$_078;
                     };
                 }else{
-                    if(v$g$_094==true){v$g$_088=0};
-                    if(v$g$_093==false&&v$g$_085>0&&v$g$_088!=0){
-                        v$g$_047=v$g$_085;
-                        v$g$_078=v$g$_086;
-                        v$g$_079=v$g$_087;
+                    if(v$g$_088==true){v$g$_082=0};
+                    if(v$g$_087==false&&v$g$_079>0&&v$g$_082!=0){
+                        v$g$_041=v$g$_079;
+                        v$g$_072=v$g$_080;
+                        v$g$_073=v$g$_081;
                     }else{
-                        v$g$_047=v$g$_009;
-                        if(v$g$_088==0){
-                            v$g$_083=v$g$_006;
-                            v$g$_084=v$g$_006;
+                        v$g$_041=v$g$_010;
+                        if(v$g$_082==0){
+                            v$g$_077=v$g$_006;
+                            v$g$_078=v$g$_006;
                         };
                     };
-                    v$g$_093=true;
-                    v$g$_011=true;
+                    v$g$_087=true;
+                    v$g$_012=true;
                 };
             };
         };
-        v$g$_078=v$g$_083;
-        v$g$_079=v$g$_084;
-        var v$g$_024=new Array(3);
-        v$g$_024[0]=v$g$_078;
-        v$g$_024[1]=v$g$_079;
-        v$g$_024[2]=v$g$_038(v$g$_078,v$g$_079);
-        return v$g$_024;
+        v$g$_072=v$g$_077;
+        v$g$_073=v$g$_078;
+        var v$g$_019=new Array(3);
+        v$g$_019[0]=v$g$_072;
+        v$g$_019[1]=v$g$_073;
+        v$g$_019[2]=v$g$_033(v$g$_072,v$g$_073);
+        return v$g$_019;
     };
-    function v$g$_038(v$g$_101,v$g$_102){
-        var v$g$_103=true;
-        if(v$g$_101!=undefined){
-            v$g$_103=typeof v$g$_101==='number'&&isFinite(v$g$_101);
+    function v$g$_033(v$g$_095,v$g$_096){
+        var v$g$_097=true;
+        if(v$g$_095!=undefined){
+            v$g$_097=typeof v$g$_095==='number'&&isFinite(v$g$_095);
         };
-        if(v$g$_103==true){
-            if(v$g$_102!=undefined){v$g$_103=typeof v$g$_102==='number'&&isFinite(v$g$_102)};
+        if(v$g$_097==true){
+            if(v$g$_096!=undefined){v$g$_097=typeof v$g$_096==='number'&&isFinite(v$g$_096)};
         };
-        return v$g$_103;
+        return v$g$_097;
     };
-    function v$g$_104(v$g$_105,v$g$_106){
-        var v$g$_107=Math.log10(Math.abs(v$g$_105));
-        if(v$g$_038(v$g$_107)==false){v$g$_107=0};
-        var v$g$_108=Math.log10(Math.abs(v$g$_106));
-        if(v$g$_038(v$g$_108)==false){v$g$_108=0};
-        var v$g$_109=v$g$_107;
-        if(v$g$_108>v$g$_109){v$g$_109=v$g$_108};
-        v$g$_109=10**v$g$_109;
-        v$g$_105=v$g$_105/v$g$_109;
-        v$g$_106=v$g$_106/v$g$_109;
+    function v$g$_098(v$g$_099,v$g$_100){
+        var v$g$_101=Math.log10(Math.abs(v$g$_099));
+        if(v$g$_033(v$g$_101)==false){v$g$_101=0};
+        var v$g$_102=Math.log10(Math.abs(v$g$_100));
+        if(v$g$_033(v$g$_102)==false){v$g$_102=0};
+        var v$g$_103=v$g$_101;
+        if(v$g$_102>v$g$_103){v$g$_103=v$g$_102};
+        v$g$_103=10**v$g$_103;
+        v$g$_099=v$g$_099/v$g$_103;
+        v$g$_100=v$g$_100/v$g$_103;
+        var v$g$_104=new Array();
+        v$g$_104.push(v$g$_099);
+        v$g$_104.push(v$g$_100);
+        v$g$_104.push(v$g$_103);
+        return v$g$_104;
+    };
+    function v$g$_105(v$g$_106,v$g$_107){
+        var v$g$_108=v$g$_098(v$g$_106,v$g$_107);
+        v$g$_106=v$g$_108[0];
+        v$g$_107=v$g$_108[1];
+        var v$g$_109;
         var v$g$_110;
-        var v$g$_111;
-        var v$g$_112=(v$g$_105**2+v$g$_106**2)**(0.5);
-        if(v$g$_112<0){v$g$_112=0};
-        if(v$g$_112>0){
-            v$g$_110=Math.asin(Math.abs(v$g$_106)/v$g$_112);
-            v$g$_111=v$g$_112*v$g$_109;
-            if(v$g$_105>=0){
-                if(v$g$_106<0){v$g$_110=2*v$g$_010-v$g$_110};
+        var v$g$_111=(v$g$_106**2+v$g$_107**2)**(0.5);
+        if(v$g$_111<0){v$g$_111=0};
+        if(v$g$_111>0){
+            v$g$_109=Math.asin(Math.abs(v$g$_107)/v$g$_111);
+            v$g$_110=v$g$_111*v$g$_108[2];
+            if(v$g$_106>=0){
+                if(v$g$_107<0){v$g$_109=2*v$g$_011-v$g$_109};
             }else{
-                if(v$g$_106>=0){v$g$_110=v$g$_010-v$g$_110}else{v$g$_110=v$g$_010+v$g$_110};
+                if(v$g$_107>=0){v$g$_109=v$g$_011-v$g$_109}else{v$g$_109=v$g$_011+v$g$_109};
             };
         }else{
+            v$g$_109=0;
             v$g$_110=0;
-            v$g$_111=0;
         };
-        if(v$g$_110>v$g$_010){v$g$_110=v$g$_110-2*v$g$_010};
-        if(v$g$_110<=-v$g$_010){v$g$_110=v$g$_010};
-        var v$g$_113=new Array();
-        if(v$g$_038(v$g$_111,v$g$_110)==true){
-            v$g$_113.push(v$g$_111);
-            v$g$_113.push(v$g$_110);
+        if(v$g$_109>v$g$_011){v$g$_109=v$g$_109-2*v$g$_011};
+        if(v$g$_109<=-v$g$_011){v$g$_109=v$g$_011};
+        var v$g$_112=new Array();
+        if(v$g$_033(v$g$_110,v$g$_109)==true){
+            v$g$_112.push(v$g$_110);
+            v$g$_112.push(v$g$_109);
         }else{
-            v$g$_113.push(v$g$_005);
-            v$g$_113.push(v$g$_005);
+            v$g$_112.push(v$g$_005);
+            v$g$_112.push(v$g$_005);
         };
-        return v$g$_113;
+        return v$g$_112;
     };
-    function v$g$_026(v$g$_022,v$g$_023){
+    function v$g$_021(v$g$_017,v$g$_018){
+        var v$g$_113=0;
         var v$g$_114=0;
-        var v$g$_115=0;
-        var v$g$_116=(2*v$g$_010)**v$g$_022*Math.cos(-v$g$_023*Math.log(2*v$g$_010))/v$g$_010;
-        var v$g$_117=(2*v$g$_010)**v$g$_022*Math.sin(-v$g$_023*Math.log(2*v$g$_010))/(-v$g$_010);
-        var v$g$_118=Math.sin(v$g$_022*v$g$_010/2)*Math.cosh(v$g$_023*v$g$_010/2);
-        var v$g$_119=Math.cos(v$g$_022*v$g$_010/2)*Math.sinh(v$g$_023*v$g$_010/2);
-        v$g$_114=v$g$_116*v$g$_118-v$g$_117*v$g$_119;
-        v$g$_115=v$g$_116*v$g$_119+v$g$_117*v$g$_118;
-        var v$g$_024=new Array(3);
-        v$g$_024[2]=v$g$_038(v$g$_114,v$g$_115);
-        if(v$g$_024[2]==false){
+        var v$g$_115=(2*v$g$_011)**v$g$_017*Math.cos(-v$g$_018*Math.log(2*v$g$_011))/v$g$_011;
+        var v$g$_116=(2*v$g$_011)**v$g$_017*Math.sin(-v$g$_018*Math.log(2*v$g$_011))/(-v$g$_011);
+        var v$g$_117=Math.sin(v$g$_017*v$g$_011/2)*Math.cosh(v$g$_018*v$g$_011/2);
+        var v$g$_118=Math.cos(v$g$_017*v$g$_011/2)*Math.sinh(v$g$_018*v$g$_011/2);
+        v$g$_113=v$g$_115*v$g$_117-v$g$_116*v$g$_118;
+        v$g$_114=v$g$_115*v$g$_118+v$g$_116*v$g$_117;
+        var v$g$_019=new Array(3);
+        v$g$_019[2]=v$g$_033(v$g$_113,v$g$_114);
+        if(v$g$_019[2]==false){
+            v$g$_113=v$g$_005;
             v$g$_114=v$g$_005;
-            v$g$_115=v$g$_005;
         };
-        v$g$_024[0]=v$g$_114;
-        v$g$_024[1]=v$g$_115;
-        return v$g$_024;
+        v$g$_019[0]=v$g$_113;
+        v$g$_019[1]=v$g$_114;
+        return v$g$_019;
     };
-    function v$g$_120(v$g$_121,v$g$_122,v$g$_123,v$g$_124){
-        var v$g$_125=v$g$_038(v$g$_121,v$g$_122);
-        if(v$g$_125==true){
-            v$g$_125=v$g$_038(v$g$_123);
-            if(v$g$_125==true){
-                if(v$g$_123<0){v$g$_125=false};
-                if(v$g$_123>1){v$g$_125=false};
+    function v$g$_119(v$g$_120,v$g$_121,v$g$_122,v$g$_123){
+        var v$g$_124=v$g$_033(v$g$_120,v$g$_121);
+        if(v$g$_124==true){
+            v$g$_124=v$g$_033(v$g$_122);
+            if(v$g$_124==true){
+                if(v$g$_122<0){v$g$_124=false};
+                if(v$g$_122>1){v$g$_124=false};
             };
-            if(v$g$_125==true){if(typeof v$g$_124!=='boolean'){v$g$_125=false}};
+            if(v$g$_124==true){if(typeof v$g$_123!=='boolean'){v$g$_124=false}};
         };
-        return v$g$_125;
+        return v$g$_124;
     };
     // ****** MAIN PROGRAM START ******
-    var v$g$_126=performance.now();
-    var v$g$_127=realPart;
-    var v$g$_128=imaginaryPart;
-    var v$g$_129=approximationEffort;
-    var v$g$_130=verifyResult_onOff;
-    var v$g$_131=v$g$_120(v$g$_127,v$g$_128,v$g$_129,v$g$_130);
-    v$g$_011=false;
-    v$g$_012=undefined;
+    var v$g$_125=performance.now();
+    var v$g$_126=realPart;
+    var v$g$_127=imaginaryPart;
+    var v$g$_128=approximationEffort;
+    var v$g$_129=verifyResult_onOff;
+    var v$g$_130=v$g$_119(v$g$_126,v$g$_127,v$g$_128,v$g$_129);
+    v$g$_012=false;
     v$g$_013=undefined;
     v$g$_014=undefined;
-    if(v$g$_131==false){
-        var v$g$_132=new Array(7);
-        v$g$_132[0]=v$g$_006;
-        v$g$_132[1]=v$g$_006;
-        v$g$_132[2]=v$g$_006;
-        v$g$_132[3]=v$g$_006;
-        v$g$_132[4]=v$g$_006;
-        v$g$_132[5]=false;
-        if(v$g$_001==true){v$g$_132[6]='0 ms'}else{v$g$_132[6]=0};
-        return v$g$_132;
+    v$g$_015=undefined;
+    if(v$g$_130==false){
+        var v$g$_131=new Array(7);
+        v$g$_131[0]=v$g$_006;
+        v$g$_131[1]=v$g$_006;
+        v$g$_131[2]=v$g$_006;
+        v$g$_131[3]=v$g$_006;
+        v$g$_131[4]=v$g$_006;
+        v$g$_131[5]=false;
+        if(v$g$_001==true){v$g$_131[6]='0 ms'}else{v$g$_131[6]=0};
+        return v$g$_131;
     };
-    v$g$_effort_adjust(v$g$_129);
-    var v$g$_133=false;
-    if(v$g$_128<0){
-        v$g$_133=true;
-        v$g$_128=-v$g$_128;
+    v$g$_effort_adjust(v$g$_128);
+    var v$g$_132=false;
+    if(v$g$_127<0){
+        v$g$_132=true;
+        v$g$_127=-v$g$_127;
     };
-    var v$g$_134=v$g$_F6(v$g$_127,v$g$_128,v$g$_007[1]);
-    var v$g$_135=v$g$_134[0];
-    var v$g$_136=v$g$_134[1];
-    var v$g$_137=v$g$_134[2];
-    var v$g$_138;
-    var v$g$_139=new Array(7);
-    if(v$g$_137==true){
-        if(v$g$_133==true){v$g$_136=-v$g$_136};
-        v$g$_138=v$g$_104(v$g$_135,v$g$_136);
-        v$g$_137=v$g$_038(v$g$_138[0],v$g$_138[1]);
+    var v$g$_133=v$g$_F6(v$g$_126,v$g$_127,v$g$_007[1]);
+    var v$g$_134=v$g$_133[0];
+    var v$g$_135=v$g$_133[1];
+    var v$g$_136=v$g$_133[2];
+    var v$g$_137;
+    var v$g$_138=new Array(7);
+    if(v$g$_136==true){
+        if(v$g$_132==true){v$g$_135=-v$g$_135};
+        v$g$_137=v$g$_105(v$g$_134,v$g$_135);
+        v$g$_136=v$g$_033(v$g$_137[0],v$g$_137[1]);
     };
-    var v$g$_140=false;
+    var v$g$_139=false;
+    var v$g$_140=v$g$_005;
     var v$g$_141=v$g$_005;
-    var v$g$_142=v$g$_005;
-    if(v$g$_137==true&&v$g$_130==true&&v$g$_011==false){
-        v$g$_011=true;
-        v$g$_140=true;
-        var v$g$_143=new Array(3);
-        var v$g$_144=10**(-5);
-        if((Math.abs(v$g$_127-1)<v$g$_144||Math.abs(v$g$_127+v$g$_015)<v$g$_144)&&Math.abs(v$g$_128)<v$g$_144){
-            if(Math.abs(v$g$_127-1)<v$g$_144){
-                if(v$g$_127>=1){v$g$_127=1+v$g$_144}else{v$g$_127=1-v$g$_144};
+    if(v$g$_136==true&&v$g$_129==true&&v$g$_012==false){
+        v$g$_012=true;
+        v$g$_139=true;
+        var v$g$_142=new Array(3);
+        var v$g$_143=10**(-5);
+        if((Math.abs(v$g$_126-1)<v$g$_143||Math.abs(v$g$_126+v$g$_016)<v$g$_143)&&Math.abs(v$g$_127)<v$g$_143){
+            if(Math.abs(v$g$_126-1)<v$g$_143){
+                if(v$g$_126>=1){v$g$_126=1+v$g$_143}else{v$g$_126=1-v$g$_143};
             }else{
-                if(v$g$_127>=3){v$g$_127=3+v$g$_144}else{v$g$_127=3-v$g$_144};
+                if(v$g$_126>=3){v$g$_126=3+v$g$_143}else{v$g$_126=3-v$g$_143};
             };
         };
-        if(Math.abs(v$g$_127-0.5)<10**(-10)){v$g$_127=0.5-10**(-10)};
-        var v$g$_145=v$g$_127;
-        v$g$_145=1-v$g$_145;
-        if(v$g$_145>=v$g$_015){v$g$_143=v$g$_F2(v$g$_145,v$g$_128)}else{v$g$_143=v$g$_F1(v$g$_145,v$g$_128)};
-        var v$g$_146;
-        if(v$g$_143[2]==false){v$g$_140=false};
-        if(v$g$_140==true){
-            v$g$_143[1]=-v$g$_143[1];
-            v$g$_145=v$g$_127;
-            if(v$g$_145>=v$g$_015){v$g$_146=v$g$_F2(v$g$_145,v$g$_128)}else{v$g$_146=v$g$_F1(v$g$_145,v$g$_128)};
-            if(v$g$_146[2]==false){v$g$_140=false};
+        if(Math.abs(v$g$_126-0.5)<10**(-10)){v$g$_126=0.5-10**(-10)};
+        var v$g$_144=v$g$_126;
+        v$g$_144=1-v$g$_144;
+        if(v$g$_144>=v$g$_016){v$g$_142=v$g$_F2(v$g$_144,v$g$_127)}else{v$g$_142=v$g$_F1(v$g$_144,v$g$_127)};
+        var v$g$_145;
+        if(v$g$_142[2]==false){v$g$_139=false};
+        if(v$g$_139==true){
+            v$g$_142[1]=-v$g$_142[1];
+            v$g$_144=v$g$_126;
+            if(v$g$_144>=v$g$_016){v$g$_145=v$g$_F2(v$g$_144,v$g$_127)}else{v$g$_145=v$g$_F1(v$g$_144,v$g$_127)};
+            if(v$g$_145[2]==false){v$g$_139=false};
         };
-        if(v$g$_140==true){
-            var v$g$_147=v$g$_143[0];
-            var v$g$_148=v$g$_143[1];
-            var v$g$_149=v$g$_146[0];
-            var v$g$_150=v$g$_146[1];
-            var v$g$_151=v$g$_149**2+v$g$_150**2;
+        if(v$g$_139==true){
+            var v$g$_146=v$g$_142[0];
+            var v$g$_147=v$g$_142[1];
+            var v$g$_148=v$g$_145[0];
+            var v$g$_149=v$g$_145[1];
+            var v$g$_150=v$g$_148**2+v$g$_149**2;
+            var v$g$_151;
             var v$g$_152;
-            var v$g$_153;
-            v$g$_152=(v$g$_147*v$g$_149+v$g$_148*v$g$_150)/v$g$_151;
-            v$g$_153=(v$g$_149*v$g$_148-v$g$_147*v$g$_150)/v$g$_151;
-            var v$g$_154=v$g$_026(1-v$g$_127,v$g$_128);
-            v$g$_154[1]=-v$g$_154[1];
-            var v$g$_155=v$g$_154[0];
-            var v$g$_156=v$g$_154[1];
-            var v$g$_157=v$g$_155**2+v$g$_156**2;
-            v$g$_141=(v$g$_152*v$g$_155+v$g$_153*v$g$_156)/v$g$_157;
-            v$g$_142=(v$g$_155*v$g$_153-v$g$_152*v$g$_156)/v$g$_157;
-            if(v$g$_133==true){v$g$_142=-v$g$_142};
-            v$g$_140=v$g$_038(v$g$_141,v$g$_142);
+            v$g$_151=(v$g$_146*v$g$_148+v$g$_147*v$g$_149)/v$g$_150;
+            v$g$_152=(v$g$_148*v$g$_147-v$g$_146*v$g$_149)/v$g$_150;
+            var v$g$_153=v$g$_021(1-v$g$_126,v$g$_127);
+            v$g$_153[1]=-v$g$_153[1];
+            var v$g$_154=v$g$_153[0];
+            var v$g$_155=v$g$_153[1];
+            var v$g$_156=v$g$_154**2+v$g$_155**2;
+            v$g$_140=(v$g$_151*v$g$_154+v$g$_152*v$g$_155)/v$g$_156;
+            v$g$_141=(v$g$_154*v$g$_152-v$g$_151*v$g$_155)/v$g$_156;
+            if(v$g$_132==true){v$g$_141=-v$g$_141};
+            v$g$_139=v$g$_033(v$g$_140,v$g$_141);
         };
     };
-    if(v$g$_137==true){
-        v$g$_139[0]=v$g$_135;
-        v$g$_139[1]=v$g$_136;
-        v$g$_139[2]=v$g$_138[0];
-        v$g$_139[3]=v$g$_138[1];
+    if(v$g$_136==true){
+        v$g$_138[0]=v$g$_134;
+        v$g$_138[1]=v$g$_135;
+        v$g$_138[2]=v$g$_137[0];
+        v$g$_138[3]=v$g$_137[1];
     }else{
-        v$g$_139[0]=v$g$_005;
-        v$g$_139[1]=v$g$_005;
-        v$g$_139[2]=v$g$_005;
-        v$g$_139[3]=v$g$_005;
+        v$g$_138[0]=v$g$_005;
+        v$g$_138[1]=v$g$_005;
+        v$g$_138[2]=v$g$_005;
+        v$g$_138[3]=v$g$_005;
     };
-    var v$g$_158=-1;
-    if(v$g$_130==true){
-        if(v$g$_140==true){v$g$_158=v$g$_calculate_trust(v$g$_135,v$g$_136,v$g$_141,v$g$_142)}else{v$g$_158=0};
-        if(v$g$_038(v$g$_158)==false){v$g$_158=0};
+    var v$g$_157=-1;
+    if(v$g$_129==true){
+        if(v$g$_139==true){v$g$_157=v$g$_calculate_trust(v$g$_134,v$g$_135,v$g$_140,v$g$_141)}else{v$g$_157=0};
+        if(v$g$_033(v$g$_157)==false){v$g$_157=0};
     };
-    v$g$_139[4]=v$g$_158;
-    v$g$_139[5]=v$g$_137;
-    v$g$_126=performance.now()-v$g$_126;
-    v$g$_126=Math.round(v$g$_126);
-    if(v$g$_001==true){v$g$_139[6]=Math.floor(v$g$_126).toString()+' ms'}else{v$g$_139[6]=Math.floor(v$g$_126)};
-    return v$g$_139; // MainReturn vanilla_gamma()
+    v$g$_138[4]=v$g$_157;
+    v$g$_138[5]=v$g$_136;
+    v$g$_125=performance.now()-v$g$_125;
+    v$g$_125=Math.round(v$g$_125);
+    if(v$g$_001==true){v$g$_138[6]=Math.floor(v$g$_125).toString()+' ms'}else{v$g$_138[6]=Math.floor(v$g$_125)};
+    return v$g$_138; // MainReturn vanilla_gamma()
     // ****** MAIN PROGRAM END ******
     // --- EDIT start ---
     function v$g$_alert_manager(alert_nr){
-        var v$g$_159=false;
+        var v$g$_158=false;
         // ________________________________________________________________________________________
-        if(alert_nr==1){v$g$_159=true;alert('vanilla_gamma()\nerror_effort_declare:\neffort < 0')};
-        if(alert_nr==2){v$g$_159=true;alert('vanilla_gamma()\nerror_effort_declare:\neffort > 1')};
+        if(alert_nr==1){v$g$_158=true;alert('vanilla_gamma()\nerror_effort_declare:\neffort < 0')};
+        if(alert_nr==2){v$g$_158=true;alert('vanilla_gamma()\nerror_effort_declare:\neffort > 1')};
         // ________________________________________________________________________________________
-        if(v$g$_159==false){alert('vanilla_gamma():\nunknown alert')};
+        if(v$g$_158==false){alert('vanilla_gamma():\nunknown alert')};
     };
-    function v$g$_effort_adjust(v$g$_160){
+    function v$g$_effort_adjust(v$g$_159){
         v$g$_007=new Array(4);
-        v$g$_007[0]=v$g$_160;          // effort_reference
+        v$g$_007[0]=v$g$_159;          // effort_reference
         // Effort adjust start _________________________________
         v$g$_007[1]=v$g$_007[0];       // effort_adjust_F6
         v$g$_007[2]=v$g$_007[0]**2;    // effort_adjust_F2verify
         v$g$_007[3]=1.000;             // amplifier_F6
         // Effort adjust end ___________________________________
         // Value range monitoring: 0<= effortValue <=1
-        for(var v$g$_161=0;v$g$_161<v$g$_007.length-1;v$g$_161++){
-            if(v$g$_007[v$g$_161]<0){v$g$_alert_manager(1)};
-            if(v$g$_007[v$g$_161]>1){v$g$_alert_manager(2)};
+        for(var v$g$_160=0;v$g$_160<v$g$_007.length-1;v$g$_160++){
+            if(v$g$_007[v$g$_160]<0){v$g$_alert_manager(1)};
+            if(v$g$_007[v$g$_160]>1){v$g$_alert_manager(2)};
         };
     };
     function v$g$_calculate_trust(v$g$_resultValueReal,v$g$_resultValueImag,v$g$_checkValueReal,v$g$_checkValueImag){
         // Calculate the difference between the result- and check number
-        var delta_resChk=((v$g$_resultValueReal-v$g$_checkValueReal)**2+(v$g$_resultValueImag-v$g$_checkValueImag)**2)**(0.5);
-        var v$g$_162=(v$g$_resultValueReal**2+v$g$_resultValueImag**2)**(0.5);
-        if(v$g$_162>1||v$g$_002==false){delta_resChk=delta_resChk/v$g$_162}else{delta_resChk=delta_resChk*v$g$_162};
-        return v$g$_163(delta_resChk); // Transform the difference into a trust value
+        if(v$g$_resultValueReal<0){v$g$_resultValueReal=-v$g$_resultValueReal;v$g$_checkValueReal=-v$g$_checkValueReal};
+        if(v$g$_resultValueImag<0){v$g$_resultValueImag=-v$g$_resultValueImag;v$g$_checkValueImag=-v$g$_checkValueImag};
+        var v$g$_161=v$g$_resultValueReal-v$g$_checkValueReal!=0||v$g$_resultValueImag-v$g$_checkValueImag!=0;
+        var v$g$_162=v$g$_098(v$g$_resultValueReal,v$g$_resultValueImag);
+        v$g$_resultValueReal=v$g$_162[0];
+        v$g$_resultValueImag=v$g$_162[1];
+        var v$g$_163=Math.abs((v$g$_resultValueReal**2+v$g$_resultValueImag**2)**(0.5)*v$g$_162[2]);
+        v$g$_checkValueReal=v$g$_checkValueReal/v$g$_162[2];
+        v$g$_checkValueImag=v$g$_checkValueImag/v$g$_162[2];
+        var v$g$_164=v$g$_098(v$g$_resultValueReal-v$g$_checkValueReal,v$g$_resultValueImag-v$g$_checkValueImag);
+        var delta_resChk=(v$g$_164[0]**2+v$g$_164[1]**2)**(0.5)*v$g$_164[2]*v$g$_162[2];
+        if(v$g$_163==0&&v$g$_161==false&&v$g$_002==false){v$g$_163=1};
+        if(v$g$_163>1||v$g$_002==false){delta_resChk=delta_resChk/v$g$_163}else{delta_resChk=delta_resChk*v$g$_163};
+        return v$g$_165(delta_resChk); // Transform the difference into a trust value
     };
-    function v$g$_163(v$g$_164){
+    function v$g$_165(v$g$_166){
         // trustTransformFunction
-        v$g$_164=-Math.log10(v$g$_164+10**(-51));
-        if(v$g$_164>0){
-            v$g$_164=v$g$_164*(1-10**(-10));
-            v$g$_164=((((100**0.25)**v$g$_164)/100)**(2/457));
-            if(v$g$_164>1){v$g$_164=1};
-            v$g$_164=1-(1-v$g$_164)/0.00998259143149816;
+        v$g$_166=-Math.log10(v$g$_166+10**(-51));
+        if(v$g$_166>0){
+            v$g$_166=v$g$_166*(1-10**(-10));
+            v$g$_166=((((100**0.25)**v$g$_166)/100)**(2/457));
+            if(v$g$_166>1){v$g$_166=1};
+            v$g$_166=1-(1-v$g$_166)/0.00998259143149816;
         };
-        if(v$g$_164<0){v$g$_164=0};
-        if(v$g$_164>1){v$g$_164=1};
-        v$g$_164=v$g$_164*0.999999999999999;
-        if(v$g$_038(v$g$_164)==false){v$g$_164=0};
-        return v$g$_164;
+        if(v$g$_166<0){v$g$_166=0};
+        if(v$g$_166>1){v$g$_166=1};
+        v$g$_166=v$g$_166*v$g$_009;
+        if(v$g$_033(v$g$_166)==false){v$g$_166=0};
+        return v$g$_166;
     };
     // --- EDIT end ---
 }; // vanilla_gamma() functionEnd
