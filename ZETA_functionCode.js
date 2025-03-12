@@ -1,6 +1,6 @@
 // JavaScript Method for Evaluating the Riemann Zeta Function:
 // Handling Complex and Negative Real Numbers.
-// In line 754, you can activate the test function:
+// In line 755, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
@@ -31,8 +31,8 @@ https://www.zeta-calculator.com/
 
 function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // #################################
-    // Version : 007
-    // Released: Mar. 10, 2025
+    // Version : 008
+    // Released: Mar. 12, 2025
     // Location: www.zeta-calculator.com
     // #################################
     if(typeof v$z$_000==='undefined'){
@@ -61,8 +61,8 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         v$z$_009=new Array();
         v$z$_010=new Array();
         v$z$_011=0;
-        v$z$_012=0;
-        v$z$_013=0;
+        v$z$_012=-3;
+        v$z$_013=330;
         v$z$_014=false;
         v$z$_015=new Array();
         v$z$_016=new Array();
@@ -87,7 +87,7 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         v$z$_023[1]=0;
         v$z$_023[2]=false;
         var v$z$_024=false;
-        var v$z$_025=330;
+        var v$z$_025=v$z$_013;
         if(Math.abs(v$z$_021)>v$z$_025){v$z$_024=true};
         var v$z$_026;
         if(v$z$_022==false){
@@ -110,7 +110,7 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
                     return v$z$_023;
                 };
             }else{
-                v$z$_030=v$z$_F6(v$z$_020,v$z$_021,v$z$_015[6]);
+                v$z$_030=v$z$_F6(v$z$_020,v$z$_021,v$z$_015[7]);
                 v$z$_028=v$z$_030[0];
                 v$z$_029=v$z$_030[1];
             };
@@ -123,8 +123,6 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         if(v$z$_022==false){
             if(v$z$_024==false){
                 v$z$_031=v$z$_F2(1-v$z$_020,-v$z$_021,v$z$_015[3]);
-                v$z$_012=v$z$_031[0];
-                v$z$_013=v$z$_031[1];
             }else{
                 v$z$_014=true;
                 v$z$_031=v$z$_F4(v$z$_020,v$z$_021,v$z$_015[5]);
@@ -137,9 +135,11 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
             };
         }else{
             v$z$_031=new Array(3);
-            v$z$_031[0]=v$z$_012;
-            v$z$_031[1]=v$z$_013;
-            v$z$_031[2]=true;
+            v$z$_031=v$z$_F4(1-v$z$_020,-v$z$_021,v$z$_015[6]);
+            if(v$z$_031[2]==false){
+                v$z$_023[2]=false;
+                return v$z$_023;
+            };
             v$z$_032=v$z$_031[0];
             v$z$_033=v$z$_031[1];
             v$z$_026=v$z$_027(1-v$z$_020,-v$z$_021);
@@ -555,7 +555,7 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
     var v$z$_186=false;
     var v$z$_187=-1;
     if(v$z$_183==true){v$z$_187=0};
-    if(v$z$_180>=-3){
+    if(v$z$_180>=v$z$_012){
         if(v$z$_002==false&&Math.abs(v$z$_180-0.5)<10**(-10)){v$z$_180=0.5-10**(-10)};
         var v$z$_188=v$z$_F2(v$z$_180,v$z$_181,v$z$_015[1]);
         var v$z$_189=v$z$_188[0];
@@ -656,15 +656,16 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         if(v$z$_206==false){alert('vanilla_zeta():\nunknown alert')};
     };
     function v$z$_effort_adjust(v$z$_207){
-        v$z$_015=new Array(7);
-        v$z$_015[0]=v$z$_207;          // effort_reference
+        v$z$_015=new Array(8);
+        v$z$_015[0]=v$z$_207;           // effort_reference
         // Effort adjust start ______________________________________
-        v$z$_015[1]=v$z$_015[0]**1.62; // effort_adjust_F2
-        v$z$_015[2]=v$z$_015[0]**3.24; // effort_adjust_F4
-        v$z$_015[3]=v$z$_015[0]**2;    // effort_adjust_F1(F2)\F3(F2)
-        v$z$_015[4]=v$z$_015[0]**2;    // effort_adjust_F1(F6_gamma)
-        v$z$_015[5]=v$z$_015[0]**4;    // effort_adjust_F1(overflow)
-        v$z$_015[6]=v$z$_015[0]**2;    // effort_adjust_F3(F6_gamma)
+        v$z$_015[1]=v$z$_015[0]**1.62;  // effort_adjust_F2
+        v$z$_015[2]=v$z$_015[0]**3.24;  // effort_adjust_F4
+        v$z$_015[3]=v$z$_015[0]**2;     // effort_adjust_F1(F2)
+        v$z$_015[4]=v$z$_015[0]**2;     // effort_adjust_F1(F6_gamma)
+        v$z$_015[5]=v$z$_015[0]**4;     // effort_adjust_F1(overflow)
+        v$z$_015[6]=v$z$_015[0]**3;     // effort_adjust_F3(F4);
+        v$z$_015[7]=v$z$_015[0]**2;     // effort_adjust_F3(F6_gamma)
         // Effort adjust end ________________________________________
         // Value range monitoring: 0<= effortValue <=1
         for(var v$z$_208=0;v$z$_208<v$z$_015.length;v$z$_208++){
