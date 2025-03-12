@@ -4,7 +4,7 @@
 
 | Version                      | Supported    |
 | ---------------------------- | ------------ |
-| 007 /Zeta                    | Yes          |
+| 008 /Zeta                    | Yes          |
 | 007 /Gamma                   | Yes          |
 Future versions will be supported as the project evolves.
 
