@@ -1,6 +1,6 @@
 // JavaScript Method for Evaluating the Riemann Zeta Function:
 // Handling Complex and Negative Real Numbers.
-// In line 755, you can activate the test function:
+// In line 750, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
@@ -31,8 +31,8 @@ https://www.zeta-calculator.com/
 
 function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // #################################
-    // Version : 008
-    // Released: Mar. 12, 2025
+    // Version : 009
+    // Released: Mar. 24, 2025
     // Location: www.zeta-calculator.com
     // #################################
     if(typeof v$z$_000==='undefined'){
@@ -92,60 +92,58 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         var v$z$_026;
         if(v$z$_022==false){
             v$z$_026=v$z$_027(v$z$_020,v$z$_021);
-            if(v$z$_026[2]==0){v$z$_024=true};
+            if(v$z$_026[2]==false){v$z$_024=true};
         };
-        var v$z$_028=0;
-        var v$z$_029=0;
+        var v$z$_028;
+        var v$z$_029;
         var v$z$_030=new Array(3);
         v$z$_030[0]=0;
         v$z$_030[1]=0;
         v$z$_030[2]=false;
+        var v$z$_031;
+        var v$z$_032;
+        var v$z$_033;
+        var v$z$_034;
+        var v$z$_035;
+        var v$z$_036;
         if(v$z$_024==false){
             if(v$z$_022==false){
                 v$z$_030=v$z$_F6(1-v$z$_020,-v$z$_021,v$z$_015[4]);
                 v$z$_028=v$z$_030[0];
                 v$z$_029=v$z$_030[1];
-                if(v$z$_030[2]==false){
+                if(v$z$_030[2]==false){v$z$_023[2]=false;return v$z$_023};
+            }else{
+                v$z$_026=v$z$_027(1-v$z$_020,-v$z$_021);
+                v$z$_034=v$z$_026[0];
+                v$z$_035=v$z$_026[1];
+                v$z$_036=v$z$_034**2+v$z$_035**2;
+                if(v$z$_036==0||v$z$_045(v$z$_036)==false||v$z$_026[2]==false){
                     v$z$_023[2]=false;
                     return v$z$_023;
                 };
-            }else{
                 v$z$_030=v$z$_F6(v$z$_020,v$z$_021,v$z$_015[7]);
                 v$z$_028=v$z$_030[0];
                 v$z$_029=v$z$_030[1];
+                if(v$z$_030[2]==false||v$z$_045(v$z$_028**2+v$z$_029**2)==false||v$z$_028**2+v$z$_029**2==0){
+                    v$z$_023[2]=false;
+                    return v$z$_023;
+                };
             };
         };
-        var v$z$_031=new Array();
-        var v$z$_032=0;
-        var v$z$_033=0;
-        var v$z$_034=0;
-        var v$z$_035=0;
         if(v$z$_022==false){
             if(v$z$_024==false){
                 v$z$_031=v$z$_F2(1-v$z$_020,-v$z$_021,v$z$_015[3]);
             }else{
                 v$z$_014=true;
                 v$z$_031=v$z$_F4(v$z$_020,v$z$_021,v$z$_015[5]);
-                if(v$z$_031[2]==true){
-                    v$z$_030[2]=true;
-                }else{
-                    v$z$_023[2]=false;
-                    return v$z$_023;
-                };
+                v$z$_030[2]=v$z$_031[2];
+                if(v$z$_031[2]==false){v$z$_023[2]=false;return v$z$_023};
             };
         }else{
-            v$z$_031=new Array(3);
             v$z$_031=v$z$_F4(1-v$z$_020,-v$z$_021,v$z$_015[6]);
-            if(v$z$_031[2]==false){
-                v$z$_023[2]=false;
-                return v$z$_023;
-            };
+            if(v$z$_031[2]==false){v$z$_023[2]=false;return v$z$_023};
             v$z$_032=v$z$_031[0];
             v$z$_033=v$z$_031[1];
-            v$z$_026=v$z$_027(1-v$z$_020,-v$z$_021);
-            v$z$_034=v$z$_026[0];
-            v$z$_035=v$z$_026[1];
-            var v$z$_036=v$z$_034**2+v$z$_035**2;
             var v$z$_037=v$z$_034/v$z$_036;
             var v$z$_038=-v$z$_035/v$z$_036;
             var v$z$_039=v$z$_028**2+v$z$_029**2;
@@ -164,10 +162,7 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
             v$z$_031[0]=v$z$_032;
             v$z$_031[1]=v$z$_033;
         };
-        if(v$z$_031[2]==false){
-            v$z$_023[2]=false;
-            return v$z$_023;
-        };
+        if(v$z$_031[2]==false){v$z$_023[2]=false;return v$z$_023};
         v$z$_032=v$z$_031[0];
         v$z$_033=v$z$_031[1];
         v$z$_034=v$z$_032;
