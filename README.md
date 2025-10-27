@@ -47,11 +47,11 @@ Output descriptions: Results for ζ(s) where s = input_Real + input_Imag&middot;
 
 **output_array[0]** - Real part of ζ(s)<br>
 **output_array[1]** - Imaginary part of ζ(s)<br>
-**output_array[2]** - Magnitude (abs) of ζ(s)<br>
-**output_array[3]** - Argument (arg) of ζ(s) in radians, range (−π, π]<br>
-**output_array[4]** - Trust value [0–0.999999999999999]<br>
-**output_array[5]** - Boolean flag: true if there were no calculation problems<br>
-**output_array[6]** - Process time of 'vanilla_zeta()' in milliseconds<br>
+**output_array[2]** - Magnitude |ζ(s)|<br>
+**output_array[3]** - Argument arg(ζ(s)) in radians  (−π, π]<br>
+**output_array[4]** - Trust value [0 ... 0.999999999999999]<br>
+**output_array[5]** - Boolean flag: true if no calculation errors<br>
+**output_array[6]** - Processing time (ms)<br>
 
 Outputs [0] to [3]:<br>
 The interpretation is self-explanatory.<br>
