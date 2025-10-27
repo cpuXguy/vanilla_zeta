@@ -1,20 +1,14 @@
 // JavaScript Method for Evaluating the Euler Gamma Function:
 // Handling Complex and Negative Real Numbers.
-// In line 581, you can activate the test function:
+// In line 595, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
 
-/* Scroll down to see the Gamma function code!
+/* Scroll down to see the gamma function code!
 
-JavaScript Method for Evaluating the Euler Gamma Function: Handling Complex and Negative Real Numbers.
-The vanilla_gamma() function below is the JavaScript Gamma function also used by the calculator above.
-The vanilla_gamma() code originates here from: www.zeta-calculator.com
 Feel free to copy and paste it into your project.
 It's a plug-and-play component!
-
-The project location is available at:
-https://www.zeta-calculator.com/
 
 * Copy the following functions into your project:
 *
@@ -535,53 +529,73 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
 }; // vanilla_gamma() functionEnd
 
 function Test_vanilla_gamma() {
+    //────────────────────────────────────────────────────────────────
+    //  Test Function - vanilla_gamma()
+    //  Purpose:
+    //  Demonstrates evaluation of Γ(s) = Γ(input_Real + input_Imag·i)
+    //────────────────────────────────────────────────────────────────
 
-    // Inputs: ensure that the inputs comply with the specified ranges, or the process will fail.
-    var input_Real = 7;            // Real part:      -Number.MAX_VALUE <= input_Real <= Number.MAX_VALUE
-    var input_Imag = 4;            // Imaginary part: -Number.MAX_VALUE <= input_Imag <= Number.MAX_VALUE
-    var input_Effort = 0.67;       // Effort level:   0 <= input_Effort <= 1
-    var input_TrustEnabled = true; // Trust (verify result) enabled: true, false
+    // Guard: Ready vanilla_gamma()?
+    if (typeof vanilla_gamma !== 'function') {
+        alert('vanilla_gamma()→\nFunction not available.')
+        return
+    }
 
-    // Execute the vanilla_gamma function
-    var output_array = vanilla_gamma(input_Real, input_Imag, input_Effort, input_TrustEnabled);
+    //────────────────────────────────────────────────────────────────
+    //  1. INPUT PARAMETERS
+    //────────────────────────────────────────────────────────────────
+    //  Ensure that all inputs are within valid numeric ranges.
+    var input_Real          = 7                    // Real part:      −Number.MAX_VALUE ≤ input_Real ≤ Number.MAX_VALUE
+    var input_Imag          = 4                    // Imag part:      −Number.MAX_VALUE ≤ input_Imag ≤ Number.MAX_VALUE
+    var input_Effort        = 0.67                 // Effort level:   0 ≤ input_Effort ≤ 1
+    var input_TrustEnabled  = true                 // Verify result:  true / false
 
-    /* Output Descriptions:
-    output_array[0]: Real result of Gamma
-    output_array[1]: Imaginary result of Gamma
-    output_array[2]: Polar radius result of Gamma
-    output_array[3]: Polar angle result of Gamma in radians
-    output_array[4]: Trust value of the calculation
-    output_array[5]: Boolean indicating if the calculation was successful
-    output_array[6]: Process time of 'vanilla_gamma()' in milliseconds
-    */
+    //────────────────────────────────────────────────────────────────
+    //  2. EXECUTE THE FUNCTION
+    //────────────────────────────────────────────────────────────────
+    //  Result: array of 7 values as described below.
+    var output_array = vanilla_gamma(input_Real, input_Imag, input_Effort, input_TrustEnabled)
 
-    // Handle the result of the calculation
-    if (output_array[5] == true) {
-        alert('Calculation successful.');
+    //────────────────────────────────────────────────────────────────
+    //  3. OUTPUT DESCRIPTION
+    //────────────────────────────────────────────────────────────────
+    //  Results for Γ(s) where s = input_Real + input_Imag·i
+
+    //  output_array[0] →  Real part of Γ(s)
+    //  output_array[1] →  Imaginary part of Γ(s)
+    //  output_array[2] →  Magnitude |Γ(s)|
+    //  output_array[3] →  Argument arg(Γ(s)) in radians  (−π, π]
+    //  output_array[4] →  Trust value [0 … 0.999999999999999]
+    //  output_array[5] →  Boolean flag: true if no calculation errors
+    //  output_array[6] →  Processing time (ms)
+
+    //────────────────────────────────────────────────────────────────
+    //  4. Display Output Messages
+    //────────────────────────────────────────────────────────────────
+    if (output_array[5] === true) {
+        alert('vanilla_gamma()→\nCalculation completed successfully.')
     } else {
-        if (output_array[0] == '#err') {
-            alert('Error:\nThe calculation process encountered an error!');
-        };
-        if (output_array[0] == '#ins') {
-            alert('Attention:\nInvalid input detected!\nPlease check your inputs.');
-        };
-    };
+        if (output_array[0] === '#err') {
+            alert('vanilla_gamma()→\nError encountered during calculation!')
+        }
+        if (output_array[0] === '#ins') {
+            alert('vanilla_gamma()→\nInvalid input detected.\nPlease check your parameters.');
+        }
+    }
+    alert('vanilla_gamma()[0]→\nReal Result:\n= ' + output_array[0])
+    alert('vanilla_gamma()[1]→\nImaginary Result:\n= ' + output_array[1])
+    alert('vanilla_gamma()[2]→\nMagnitude (abs value):\n= ' + output_array[2])
+    alert('vanilla_gamma()[3]→\nArgument:\n= ' + output_array[3] + ' (rad)')
+    alert('vanilla_gamma()[4]→\nTrust Value:\n= ' + output_array[4])
+    alert('vanilla_gamma()[6]→\nProcess Time:\n= ' + output_array[6])
 
-    // Display results
-    alert('Gamma Real Result:\n= ' + output_array[0]);
-    alert('Gamma Imaginary Result:\n= ' + output_array[1]);
-    alert('Gamma Polar Radius:\n= ' + output_array[2]);
-    alert('Gamma Polar Angle:\n= ' + output_array[3] + ' (Rad)');
-    alert('Trust Value:\n= ' + output_array[4]);
-    alert('Process Time for vanilla_gamma():\n= ' + output_array[6]);
+}; // End Test_vanilla_gamma()
 
-}; // Test vanilla_gamma() functionEnd
-
-// Set to 'true' to enable test mode for the vanilla_gamma() function.
-var v$g$_isTestModeEnabled = false;
+// Set to 'true' to enable test mode for the vanilla_gamma function.
+var v$g$_isTestModeEnabled = false
 if (v$g$_isTestModeEnabled) {
-    Test_vanilla_gamma();
-    alert('Test_vanilla_gamma() completed.');
+    Test_vanilla_gamma() // take a look inside the function!
+    alert('vanilla_gamma()→\nTest completed.')
 };
 
 /*** TERMS AND CONDITIONS ***
