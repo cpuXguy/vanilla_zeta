@@ -5,7 +5,7 @@
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
 
-/* Scroll down to see the Zeta function code!
+/* Scroll down to see the zeta function code!
 
 Feel free to copy and paste it into your project.
 It's a plug-and-play component!
