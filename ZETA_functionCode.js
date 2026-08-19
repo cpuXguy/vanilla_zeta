@@ -1,6 +1,6 @@
 // JavaScript Method for Evaluating the Riemann Zeta Function:
 // Handling Complex and Negative Real Numbers.
-// In line 764, you can activate the test function:
+// In line 768, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
@@ -25,41 +25,42 @@ It's a plug-and-play component!
 
 function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // #################################
-    // Version : 009
-    // Released: Mar. 24, 2025
-    // Location: www.zeta-calculator.com
+    // Version : 010
+    // Released: Aug. 19, 2026
+    // Location: https://www.zeta-calculator.com/
+    // Location: https://github.com/cpuXguy/vanilla_zeta/
     // #################################
     if(typeof v$z$_000==='undefined'){
         // Pre-settings_________________
         // 'ms' for milliseconds written in the result time-output.
-        v$z$_001 = true; // showTimeWithMsUnit: Default= true
+        globalThis.v$z$_001 = true; // showTimeWithMsUnit: Default= true
         //______________________________
         // Adapted calculation near results approaching zero.
         // If 'true': this can lower the strictness
         // for the calculation of the Trust-Value.
-        v$z$_002 = true; // adaptedZero: Default= true
+        globalThis.v$z$_002 = true; // adaptedZero: Default= true
         //______________________________
         // Stabilizes Trivial Zeros
         // (Not to be confused with the Non-Trivial Zeros!)
-        v$z$_003 = true; // stabilizeTrivial: Default= true
+        globalThis.v$z$_003 = true; // stabilizeTrivial: Default= true
         //______________________________
         // End of pre-settings__________
         v$z$_004();
     };
     function v$z$_004(){
-        v$z$_000=true;
-        v$z$_005='#err';
-        v$z$_006='#ins';
-        v$z$_007=-1;
-        v$z$_008=0;
-        v$z$_009=new Array();
-        v$z$_010=new Array();
-        v$z$_011=0;
-        v$z$_012=-3;
-        v$z$_013=330;
-        v$z$_014=false;
-        v$z$_015=new Array();
-        v$z$_016=new Array();
+        globalThis.v$z$_000=true;
+        globalThis.v$z$_005='#err';
+        globalThis.v$z$_006='#ins';
+        globalThis.v$z$_007=-1;
+        globalThis.v$z$_008=0;
+        globalThis.v$z$_009=new Array();
+        globalThis.v$z$_010=new Array();
+        globalThis.v$z$_011=0;
+        globalThis.v$z$_012=-3;
+        globalThis.v$z$_013=330;
+        globalThis.v$z$_014=false;
+        globalThis.v$z$_015=new Array();
+        globalThis.v$z$_016=new Array();
         v$z$_016.push(1);
         v$z$_016.push(-0.5);
         v$z$_016.push(1/6);
@@ -71,9 +72,9 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         v$z$_016.push(-1/30);
         v$z$_016.push(0);
         v$z$_016.push(5/66);
-        v$z$_017=1-10**(-15);
-        v$z$_018=Number.MAX_SAFE_INTEGER;
-        v$z$_019=Math.PI;
+        globalThis.v$z$_017=1-10**(-15);
+        globalThis.v$z$_018=Number.MAX_SAFE_INTEGER;
+        globalThis.v$z$_019=Math.PI;
     };
     function v$z$_F1F3(v$z$_020,v$z$_021,v$z$_022){
         var v$z$_023=new Array(3);
@@ -527,7 +528,7 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         v$z$_179[3]=v$z$_006;
         v$z$_179[4]=v$z$_006;
         v$z$_179[5]=false;
-        if(v$z$_001==true){v$z$_179[6]='0 ms'}else{v$z$_179[6]=0};
+        if(v$z$_001==true){v$z$_179[6]='0.000 ms'}else{v$z$_179[6]=0};
         return v$z$_179;
     };
     v$z$_effort_adjust(v$z$_176);
@@ -631,18 +632,18 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
     };
     v$z$_204[4]=v$z$_187;
     v$z$_204[5]=v$z$_205;
-    if(v$z$_001==true){
-        v$z$_204[6]=Math.floor(v$z$_173).toString() + ' ms'}else{v$z$_204[6]=Math.floor(v$z$_173)};
+    if(v$z$_001==true){v$z$_204[6]=v$z$_173.toFixed(3)+' ms';}else{v$z$_204[6]=v$z$_173;};
     return v$z$_204; // MainReturn vanilla_zeta()
     // ****** MAIN PROGRAM END ******
     // --- EDIT start ---
-    function v$z$_alert_manager(alert_nr){
+    function v$z$_alert_manager(alert_nr,msg){
         var v$z$_206=false;
-        // _______________________________________________________________________
-        if(alert_nr==1){v$z$_206=true;alert('vanilla_zeta()\nerror_effort_declare:\neffort < 0')};
-        if(alert_nr==2){v$z$_206=true;alert('vanilla_zeta()\nerror_effort_declare:\neffort > 1')};
-        // _______________________________________________________________________
-        if(v$z$_206==false){alert('vanilla_zeta():\nunknown alert')};
+        // ____________________________________________________________________________________
+        if(alert_nr==1){v$z$_206='vanilla_zeta()\nerror_effort_declare['+msg+']:\neffort < 0'};
+        if(alert_nr==2){v$z$_206='vanilla_zeta()\nerror_effort_declare['+msg+']:\neffort > 1'};
+        // ____________________________________________________________________________________
+        if(v$z$_206===false){v$z$_206='vanilla_zeta():\nunknown alert'};
+        try{alert(v$z$_206);}catch(error){console.log(v$z$_206+'\n');};
     };
     function v$z$_effort_adjust(v$z$_207){
         v$z$_015=new Array(8);
@@ -658,8 +659,8 @@ function vanilla_zeta(realPart, imaginaryPart, approximationEffort, verifyResult
         // Effort adjust end ________________________________________
         // Value range monitoring: 0<= effortValue <=1
         for(var v$z$_208=0;v$z$_208<v$z$_015.length;v$z$_208++){
-            if(v$z$_015[v$z$_208]<0){v$z$_alert_manager(1)};
-            if(v$z$_015[v$z$_208]>1){v$z$_alert_manager(2)};
+            if(v$z$_015[v$z$_208]<0){v$z$_015[v$z$_208]=0;v$z$_alert_manager(1,v$z$_208.toString())};
+            if(v$z$_015[v$z$_208]>1){v$z$_015[v$z$_208]=1;v$z$_alert_manager(2,v$z$_208.toString())};
         };
     };
     function v$z$_calculate_trust(v$z$_resultValueReal,v$z$_resultValueImag,v$z$_checkValueReal,v$z$_checkValueImag){
@@ -705,10 +706,12 @@ function Test_vanilla_zeta() {
     //────────────────────────────────────────────────────────────────
 
     // Guard: Ready vanilla_zeta()?
+    var run_vanilla='vanilla_zeta()→\nStarting the test.'
+    try{alert(run_vanilla);run_vanilla=true}catch(error){console.log('\n'+run_vanilla+'\n');run_vanilla=false}
     if (typeof vanilla_zeta !== 'function') {
-        alert('vanilla_zeta()→\nFunction not available.')
+        send_alert('vanilla_zeta()→\nFunction not available.')
         return
-    }
+    };
 
     //────────────────────────────────────────────────────────────────
     //  1. INPUT PARAMETERS
@@ -742,21 +745,22 @@ function Test_vanilla_zeta() {
     //  4. Display Output Messages
     //────────────────────────────────────────────────────────────────
     if (output_array[5] === true) {
-        alert('vanilla_zeta()→\nCalculation completed successfully.')
+        send_alert('vanilla_zeta()→\nCalculation completed successfully.')
     } else {
         if (output_array[0] === '#err') {
-            alert('vanilla_zeta()→\nError encountered during calculation!')
+            send_alert('vanilla_zeta()→\nError encountered during calculation!')
         }
         if (output_array[0] === '#ins') {
-            alert('vanilla_zeta()→\nInvalid input detected.\nPlease check your parameters.');
+            send_alert('vanilla_zeta()→\nInvalid input detected.\nPlease check your parameters.');
         }
     }
-    alert('vanilla_zeta()[0]→\nReal Result:\n= ' + output_array[0])
-    alert('vanilla_zeta()[1]→\nImaginary Result:\n= ' + output_array[1])
-    alert('vanilla_zeta()[2]→\nMagnitude (abs value):\n= ' + output_array[2])
-    alert('vanilla_zeta()[3]→\nArgument:\n= ' + output_array[3] + ' (rad)')
-    alert('vanilla_zeta()[4]→\nTrust Value:\n= ' + output_array[4])
-    alert('vanilla_zeta()[6]→\nProcess Time:\n= ' + output_array[6])
+    send_alert('vanilla_zeta()[0]→\nReal Result:\n= ' + output_array[0])
+    send_alert('vanilla_zeta()[1]→\nImaginary Result:\n= ' + output_array[1])
+    send_alert('vanilla_zeta()[2]→\nMagnitude (abs value):\n= ' + output_array[2])
+    send_alert('vanilla_zeta()[3]→\nArgument:\n= ' + output_array[3] + ' (rad)')
+    send_alert('vanilla_zeta()[4]→\nTrust Value:\n= ' + output_array[4])
+    send_alert('vanilla_zeta()[6]→\nProcess Time:\n= ' + output_array[6])
+    function send_alert(message){if(run_vanilla){alert(message)}else{console.log(message+'\n')}}
 
 }; // End Test_vanilla_zeta()
 
@@ -764,7 +768,7 @@ function Test_vanilla_zeta() {
 var v$z$_isTestModeEnabled = false
 if (v$z$_isTestModeEnabled) {
     Test_vanilla_zeta() // take a look inside the function!
-    alert('vanilla_zeta()→\nTest completed.')
+    try{alert('vanilla_zeta()→\nTest completed.')}catch(error){console.log('vanilla_zeta()→\nTest completed.\n')}
 };
 
 /*** TERMS AND CONDITIONS ***
