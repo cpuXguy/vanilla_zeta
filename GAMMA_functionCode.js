@@ -1,6 +1,6 @@
 // JavaScript Method for Evaluating the Euler Gamma Function:
 // Handling Complex and Negative Real Numbers.
-// In line 595, you can activate the test function:
+// In line 599, you can activate the test function:
 // Follow the program flow afterward to understand its workings.
 // For full understanding, visit: WWW.ZETA-CALCULATOR.COM
 // My best wishes for the success of your ventures!
@@ -25,29 +25,30 @@ It's a plug-and-play component!
 
 function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResult_onOff){
     // #################################
-    // Version : 007
-    // Released: Mar. 10, 2025
-    // Location: www.zeta-calculator.com
+    // Version : 008
+    // Released: Aug. 19, 2026
+    // Location: https://www.zeta-calculator.com/
+    // Location: https://github.com/cpuXguy/vanilla_zeta/
     // #################################
     if(typeof v$g$_000==='undefined'){
         // Pre-settings_________________
         // 'ms' for milliseconds written in the result time-output.
-        v$g$_001 = true; // showTimeWithMsUnit: Default= true
+        globalThis.v$g$_001 = true; // showTimeWithMsUnit: Default= true
         //______________________________
         // Adapted calculation near results approaching zero.
         // If 'true': this can lower the strictness
         // for the calculation of the Trust-Value.
-        v$g$_002 = false; // adaptedZero: Default= false
+        globalThis.v$g$_002 = false; // adaptedZero: Default= false
         //______________________________
         // End of pre-settings__________
         v$g$_004();
     };
     function v$g$_004(){
-        v$g$_000=true;
-        v$g$_005='#err';
-        v$g$_006='#ins';
-        v$g$_007=new Array();
-        v$g$_008=new Array();
+        globalThis.v$g$_000=true;
+        globalThis.v$g$_005='#err';
+        globalThis.v$g$_006='#ins';
+        globalThis.v$g$_007=new Array();
+        globalThis.v$g$_008=new Array();
         v$g$_008.push(1);
         v$g$_008.push(-0.5);
         v$g$_008.push(1/6);
@@ -59,14 +60,14 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_008.push(-1/30);
         v$g$_008.push(0);
         v$g$_008.push(5/66);
-        v$g$_009=1-10**(-15);
-        v$g$_010=Number.MAX_SAFE_INTEGER;
-        v$g$_011=Math.PI;
-        v$g$_012=undefined;
-        v$g$_013=undefined;
-        v$g$_014=undefined;
-        v$g$_015=undefined;
-        v$g$_016=-3;
+        globalThis.v$g$_009=1-10**(-15);
+        globalThis.v$g$_010=Number.MAX_SAFE_INTEGER;
+        globalThis.v$g$_011=Math.PI;
+        globalThis.v$g$_012=undefined;
+        globalThis.v$g$_013=undefined;
+        globalThis.v$g$_014=undefined;
+        globalThis.v$g$_015=undefined;
+        globalThis.v$g$_016=-3;
     };
     function v$g$_F1(v$g$_017,v$g$_018){
         var v$g$_019=new Array(3);
@@ -379,7 +380,7 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         v$g$_131[3]=v$g$_006;
         v$g$_131[4]=v$g$_006;
         v$g$_131[5]=false;
-        if(v$g$_001==true){v$g$_131[6]='0 ms'}else{v$g$_131[6]=0};
+        if(v$g$_001==true){v$g$_131[6]='0.000 ms'}else{v$g$_131[6]=0};
         return v$g$_131;
     };
     v$g$_effort_adjust(v$g$_128);
@@ -466,18 +467,18 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
     v$g$_138[4]=v$g$_157;
     v$g$_138[5]=v$g$_136;
     v$g$_125=performance.now()-v$g$_125;
-    v$g$_125=Math.round(v$g$_125);
-    if(v$g$_001==true){v$g$_138[6]=Math.floor(v$g$_125).toString()+' ms'}else{v$g$_138[6]=Math.floor(v$g$_125)};
+    if(v$g$_001==true){v$g$_138[6]=v$g$_125.toFixed(3)+' ms';}else{v$g$_138[6]=v$g$_125;};
     return v$g$_138; // MainReturn vanilla_gamma()
     // ****** MAIN PROGRAM END ******
     // --- EDIT start ---
-    function v$g$_alert_manager(alert_nr){
+    function v$g$_alert_manager(alert_nr,msg){
         var v$g$_158=false;
-        // ________________________________________________________________________________________
-        if(alert_nr==1){v$g$_158=true;alert('vanilla_gamma()\nerror_effort_declare:\neffort < 0')};
-        if(alert_nr==2){v$g$_158=true;alert('vanilla_gamma()\nerror_effort_declare:\neffort > 1')};
-        // ________________________________________________________________________________________
-        if(v$g$_158==false){alert('vanilla_gamma():\nunknown alert')};
+        // _____________________________________________________________________________________
+        if(alert_nr==1){v$g$_158='vanilla_gamma()\nerror_effort_declare['+msg+']:\neffort < 0'};
+        if(alert_nr==2){v$g$_158='vanilla_gamma()\nerror_effort_declare['+msg+']:\neffort > 1'};
+        // _____________________________________________________________________________________
+        if(v$g$_158===false){v$g$_158='vanilla_gamma():\nunknown alert'};
+        try{alert(v$g$_158);}catch(error){console.log(v$g$_158+'\n');};
     };
     function v$g$_effort_adjust(v$g$_159){
         v$g$_007=new Array(4);
@@ -489,8 +490,8 @@ function vanilla_gamma(realPart, imaginaryPart, approximationEffort, verifyResul
         // Effort adjust end ___________________________________
         // Value range monitoring: 0<= effortValue <=1
         for(var v$g$_160=0;v$g$_160<v$g$_007.length-1;v$g$_160++){
-            if(v$g$_007[v$g$_160]<0){v$g$_alert_manager(1)};
-            if(v$g$_007[v$g$_160]>1){v$g$_alert_manager(2)};
+            if(v$g$_007[v$g$_160]<0){v$g$_007[v$g$_160]=0;v$g$_alert_manager(1,v$g$_160.toString())};
+            if(v$g$_007[v$g$_160]>1){v$g$_007[v$g$_160]=1;v$g$_alert_manager(2,v$g$_160.toString())};
         };
     };
     function v$g$_calculate_trust(v$g$_resultValueReal,v$g$_resultValueImag,v$g$_checkValueReal,v$g$_checkValueImag){
@@ -536,10 +537,12 @@ function Test_vanilla_gamma() {
     //────────────────────────────────────────────────────────────────
 
     // Guard: Ready vanilla_gamma()?
+    var run_vanilla='vanilla_gamma()→\nStarting the test.'
+    try{alert(run_vanilla);run_vanilla=true}catch(error){console.log('\n'+run_vanilla+'\n');run_vanilla=false}
     if (typeof vanilla_gamma !== 'function') {
-        alert('vanilla_gamma()→\nFunction not available.')
+        send_alert('vanilla_gamma()→\nFunction not available.')
         return
-    }
+    };
 
     //────────────────────────────────────────────────────────────────
     //  1. INPUT PARAMETERS
@@ -573,21 +576,22 @@ function Test_vanilla_gamma() {
     //  4. Display Output Messages
     //────────────────────────────────────────────────────────────────
     if (output_array[5] === true) {
-        alert('vanilla_gamma()→\nCalculation completed successfully.')
+        send_alert('vanilla_gamma()→\nCalculation completed successfully.')
     } else {
         if (output_array[0] === '#err') {
-            alert('vanilla_gamma()→\nError encountered during calculation!')
+            send_alert('vanilla_gamma()→\nError encountered during calculation!')
         }
         if (output_array[0] === '#ins') {
-            alert('vanilla_gamma()→\nInvalid input detected.\nPlease check your parameters.');
+            send_alert('vanilla_gamma()→\nInvalid input detected.\nPlease check your parameters.');
         }
     }
-    alert('vanilla_gamma()[0]→\nReal Result:\n= ' + output_array[0])
-    alert('vanilla_gamma()[1]→\nImaginary Result:\n= ' + output_array[1])
-    alert('vanilla_gamma()[2]→\nMagnitude (abs value):\n= ' + output_array[2])
-    alert('vanilla_gamma()[3]→\nArgument:\n= ' + output_array[3] + ' (rad)')
-    alert('vanilla_gamma()[4]→\nTrust Value:\n= ' + output_array[4])
-    alert('vanilla_gamma()[6]→\nProcess Time:\n= ' + output_array[6])
+    send_alert('vanilla_gamma()[0]→\nReal Result:\n= ' + output_array[0])
+    send_alert('vanilla_gamma()[1]→\nImaginary Result:\n= ' + output_array[1])
+    send_alert('vanilla_gamma()[2]→\nMagnitude (abs value):\n= ' + output_array[2])
+    send_alert('vanilla_gamma()[3]→\nArgument:\n= ' + output_array[3] + ' (rad)')
+    send_alert('vanilla_gamma()[4]→\nTrust Value:\n= ' + output_array[4])
+    send_alert('vanilla_gamma()[6]→\nProcess Time:\n= ' + output_array[6])
+    function send_alert(message){if(run_vanilla){alert(message)}else{console.log(message+'\n')}}
 
 }; // End Test_vanilla_gamma()
 
@@ -595,7 +599,7 @@ function Test_vanilla_gamma() {
 var v$g$_isTestModeEnabled = false
 if (v$g$_isTestModeEnabled) {
     Test_vanilla_gamma() // take a look inside the function!
-    alert('vanilla_gamma()→\nTest completed.')
+    try{alert('vanilla_gamma()→\nTest completed.')}catch(error){console.log('vanilla_gamma()→\nTest completed.\n')}
 };
 
 /*** TERMS AND CONDITIONS ***
